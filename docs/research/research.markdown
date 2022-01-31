@@ -8,7 +8,7 @@ has_children: false
 
 ## CV
 
-[Elly Poretsky - CV (01.30.2022)](https://github.com/eporetsky/eporetsky.github.io/img/eporetsky_cv.pdf)
+[Elly Poretsky - CV (01.30.2022)](https://github.com/eporetsky/eporetsky.github.io/blob/master/imgs/eporetsky_cv.pdf)
 
 ## List of publications (in order of appearance)
 
