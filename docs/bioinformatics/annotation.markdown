@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Annotation
-permalink: /workflows/annotation
+permalink: /bioinformatics/annotation
 nav_order: 6
-parent: Workflows
+parent: Bioinformatics
 has_toc: false
 ---
 
