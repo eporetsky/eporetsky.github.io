@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Gardening
-permalink: /gardening/
+title: Nature
+permalink: /Nature/
 nav_order: 7
 has_children: false
 ---
