@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Docking
-permalink: /resources/docking
+title: Pockets
+permalink: /resources/Pockets
 nav_order: 1
 parent: Resources
 has_toc: false
@@ -59,7 +59,7 @@ https://github.com/concept-lab/SiteFerret
 
 ## (B) PPS-align
 
-Easy to use and fast pocket similarity comparison method.
+Easy to use, but somewhat slow, pocket similarity comparison method.
 
 It seems like PPS-align doesn't have a manuscript at this point and [LS-align](https://pubmed.ncbi.nlm.nih.gov/29462237/) might be alternative paper to cite for the time being. 
 
@@ -96,5 +96,7 @@ https://www.mdpi.com/1422-0067/23/20/12462
 * [POVME 2.0](https://pubs.acs.org/doi/10.1021/ct500381c)
 * [PatchScore](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6644390/)
 * [SiteHopper](https://link.springer.com/article/10.1186/1758-2946-6-S1-P57)
+* [PocketMatch](https://link.springer.com/article/10.1186/1471-2105-9-543)
+* [PickPocket](https://www.biorxiv.org/content/10.1101/2020.04.15.042655v1.full.pdf)
 * [Ratar (WIP)](https://volkamerlab.org/projects/ratar/)
 * [PocketPipe](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6599441/)
