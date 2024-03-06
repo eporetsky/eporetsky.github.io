@@ -2,7 +2,7 @@
 layout: page
 title: Bioinformatics
 permalink: /bioinformatics/
-nav_order: 6
+nav_order: 4
 has_children: true
 has_toc: true
 ---

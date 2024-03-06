@@ -2,7 +2,7 @@
 layout: page
 title: Inverse Folding
 permalink: /resources/inverse-folding
-nav_order: 2
+nav_order: 3
 parent: Resources
 has_toc: false
 ---

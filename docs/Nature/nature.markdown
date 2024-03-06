@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Nature
-permalink: /Nature/
-nav_order: 7
+permalink: /nature/
+nav_order: 8
 has_children: false
 ---
