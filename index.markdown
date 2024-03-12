@@ -7,14 +7,46 @@ nav_order: 1
 has_toc: false
 ---
 
-# Time has come to update my website (02.27.24)
+# About me
 
-Last time I updated this website was an year and a half ago. For a bit over an year now, I have been working as a USDA SciNet ORISE Post-doc. My research focusees on improving protein function annotations using protein structure predictions and protein language models. More recently, I also started getting interested in using generative methods for protein design and docking. I don't think that I want to get into blogging about papers and methods just yet, but I do want to document my experiences with working out different ideas. For this reason, I am going to make another attempt and start adding content to this website more regularly. I created the new `Resources` page, and I will be focusing just on adding content to it. I also have a small protein-embedding project brewing up in [PlantApp.org](https://www.plantapp.org), so stay tuned.
+I am a plant biologist and bioinformatician interested in how plants interact with their enivornment using comparative genomic approaches. In my current role, I work as a computational and structural biologist as a SCINet ORISE Post Doctoral Fellow at the USDA in Albany, CA. My research focuses on improving protein function annotation using machine learning approaches on data obtained from Protein Language Models, protein structure predictions and deep learning generative models. Over the past year, I have developed a machine learning classifier for protein phosphorylationa and analyzed the predicted pan-interactome of 26 maize inbred lines. My past research involved studying maize immunity to pests and pathogens using molecular, biochemical, metabolomic, transcriptomic and genomic approaches. As part of that work, I have identified a candidate receptor for a herbivore-associated molecule that turns on immune responses against chewing caterpillars and charecterized a family of endogenous maize peptide hormones  that turn on immune responses. I have also contributed to work on elucidating maize antibiotic biosynthetic pathways using gene coexpression analyses and studied their role in promoting root-rhyzosphere interactions. To make my work broadly accesible, I develop Shiny and Dash data analysis web-applications, including my work on a website for plant comparative genomics, [PlantApp](https://www.plantapp.org/). I am also slowly working on adding new resources and tutorials here, so check back on occation if you are interested in any of these research topics.
 
-# Plant immunity through the lens of maize comparative genetics (08.28.22)
+# Research topics
 
-Maize is one of the major model systems for studying the mechanisms mediating plant immunity against pests and pathogens. Damage to crops caused by pests and pathogens is twofold: yield reduction and potential accumulation of food toxins. Studying maize immunity has been made possible, in a large part, thanks to multiple mapping populations and sequenced genomes that enable us to probe the natural genetic and phenotypic diversity across maize inbreds. One of my research interests is to build upon my experiences working on maize genetics, transcriptomics and metabolomics and expand it to other plant species, including plant species of conservation concern. I am plant biologist and bioinformatician working as a post-doc on maize biosynthesis of defensive specialized metabolites at UC San Diego with Dr. Alisa Huffaker and Dr. Eric Schmelz. In my post-doctoral research I am studying the genetic diversity of root specialized metbolites in maize and their role in protecting plants against pathogens and reshaping the root microbiome. I completed my PhD in 2021 in the Huffaker lab where I studied maize responses to elicitors that mediate anti-herbivore defense responses. For a summary of my past research I include my [CV](assets/pdfs/eporetsky_cv.pdf) and a list of my [publications](research/). The rest of my website is written as a part-blog, part-notebook, demonstrating different bioinformatics-related scripts and workflows, development of data analysis apps, and the construction of [PlantApp.org](https://www.plantapp.org), a comparative genetics database website.
+## 1. Protein Language Models 
 
-# PlantApp.org: A comparative genomics website for crops, reference organisms and species of conservation concern (08.28.22)
+## PhostBoost - a machine learning classifier for protein phosphorylation using Protein Language Models
 
-I have started working on PlantApp in August 2021 in my free time and have been slowly adding genomes, genomic annotations and analysis apps to it. The underlying objective of developing PlantApp was to crerate a lightweight repository that aggregates primarily gene-centric information from multiple plant genomes using a variety of information and annotation sources. To make PlantApp possible I have developed SQNce, a simple SQLite database for parsing commonly used gene-annotation files. PlantApp is openly available on [PlantApp.org](https://www.plantapp.org) and the SQNce GitHub reposity is openly available on my [SQNce GitHub page](https://github.com/eporetsky/SQNce). I am working on a comprehensive guide to PlantApp on my [PlantApp GitHub.io page](plantapp/) with additional examples available on the PlantApp page itself. For additional information, requests, suggestions and comments please get in touch with me on Twitter [@externelly](https://twitter.com/externelly) or by email at eporetsky at ucsd.edu. While I don't have a priority for genomes, annotation files or apps that I intend to add to PlantApp, I am interested in adding more of the available genomes from native plants that are used for ecological restoration projects. To see what genomes and annotation files are currently available on PlantApp visit the [available DBs page](https://www.plantapp.org/SQNce/available_dbs).
+Protein phosphorylation is a post-translational modification that can alter the structure and function of proteins. PhosBoost is a machine learning approach that leverages protein language models and gradient boosting trees to predict protein phosphorylation from experimentally derived data. PhosBoost offers improved performance when recall is prioritized while consistently providing more confident probability scores.
+
+![](assets/images/img_PhosBoost.png)
+
+## 2. Protein-protein interactions
+
+We deployed the PPI clustering algorithm ClusterONE to identify numerous predicted-PPI clusters that were functionally annotated using gene ontology (GO) functional enrichment, demonstrating a diverse range of enriched GO terms across different clusters. We show that the functionally annotated PPI clusters establish a useful framework for protein function prediction and prioritization of candidate genes of interest.
+
+![](assets/images/img_PanPPI.png)
+
+## 3. Protein structure-function analysis
+
+Using predicted protein structures of metabolomic enzymes with generative molecular docking is a powerful tool for understanding substrate specificity and promescuity that enables the metabolomic diversity observed in plants. 
+
+![](assets/images/img_enzyme_ligand.png)
+
+## 4. Metabolomic profiling of plant tissues
+
+Plant specialized metabolites play important roles in mediating beneficial interaction with microbes and insects and preventing damage from pests and disease. Extraction and profiling of plant metabolites is vital for untangling the basis for these complex ecological and agronomical interactions.
+
+![](assets/images/img_metabolomics.png)
+
+## 5. Association mapping to understand plant phenotypic diversity
+
+Connecting traits to causal genes through association studies can accelarate translational research and gain insights into the underlying biological processes.
+
+![](assets/images/img_GWAS.png)
+
+## 6. Comparative genomic analyses across multiple genomes
+
+Comparative genomics and phylogenemocs approaches are useful for understanding complex gene duplication, deletion and rearrangement patterns. A better understanind of these events can shed a light on gene expression regulation and neofunctionalization across the genetic diversity of plants. 
+
+![](assets/images/img_comparative_genomics.png)
