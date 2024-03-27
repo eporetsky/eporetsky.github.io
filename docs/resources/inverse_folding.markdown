@@ -22,7 +22,7 @@ Generally speaking, inverse folding models are built for predicting protein sequ
 
 [Paper](https://www.science.org/doi/10.1126/science.add2187) | [Github](https://github.com/dauparas/ProteinMPNN) | [Colab](https://colab.research.google.com/github/dauparas/ProteinMPNN/blob/main/colab_notebooks/quickdemo.ipynb) | [HuggingFace](https://huggingface.co/spaces/simonduerr/ProteinMPNN) | Docker | [YouTube](https://www.youtube.com/watch?v=aVQQuoToTJA)
 
-# LigandMPNN: Atomic context-conditioned protein sequence design using LigandMPNN
+## LigandMPNN: Atomic context-conditioned protein sequence design using LigandMPNN
 
 [Paper](https://www.biorxiv.org/content/10.1101/2023.12.22.573103v1) | [Github](https://github.com/dauparas/LigandMPNN/tree/main) | [Colab](https://colab.research.google.com/github/ullahsamee/ligandMPNN_Colab/blob/main/LigandMPNN_Colab.ipynb) | [Docker]() | [YouTube](https://www.youtube.com/watch?v=LFsxLVqPQho)
 
@@ -30,7 +30,7 @@ Generally speaking, inverse folding models are built for predicting protein sequ
 
 This model predicts protein sequences from backbone atom coordinates, trained on AF2 predicted structures. The model consists of invariant geometric input processing layers followed by a sequence-to-sequence transformer and can predict sequences for partially masked structures.
 
-[Paper](https://www.biorxiv.org/content/10.1101/2022.12.21.521526v1) | [Github](https://github.com/facebookresearch/esm?tab=readme-ov-file#invf) | [Colab](https://colab.research.google.com/github/facebookresearch/esm/blob/main/examples/inverse_folding/notebook.ipynb) | [Docker]()
+[Paper](https://www.biorxiv.org/content/10.1101/2022.12.21.521526v1) | [Github](https://github.com/facebookresearch/esm?tab=readme-ov-file#invf) | [Colab](https://colab.research.google.com/github/facebookresearch/esm/blob/main/examples/inverse_folding/notebook.ipynb) | [Docker]() |
 
 ## PiFold: Toward effective and efficient protein inverse folding
 

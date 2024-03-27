@@ -19,73 +19,55 @@ Pocket detection in protein structures is important for understanding protein fu
 </details>
 
 
+# Pocket Detection
 
+## P2Rank: machine learning based tool for rapid and accurate prediction of ligand binding sites from protein structure
 
-## (A) P2Rank
+[Paper](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0285-8) | [GitHub](https://github.com/rdk/p2rank) | [Webserver](https://academic.oup.com/nar/article/50/W1/W593/6591527?login=false) | Colab | Docker
 
-Fast and easy to use protein pocket detection method. It took ~2 hours to analyze ~30k PDB files using 12 CPU threads. 
+Fast and easy to use protein pocket detection method. It took ~2 hours to analyze ~30k PDB files using 12 CPU threads. Includes an online server for detecting and visualizing pockets.
 
-https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0285-8
+## fpocket: Fpocket: an open source platform for ligand pocket detection
 
-GitHub repository: <br>
-https://github.com/rdk/p2rank
+[Paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-10-168) | [GitHub](https://github.com/Discngine/fpocket) | [Webserver](https://durrantlab.pitt.edu/fpocketweb/) | Colab | Docker
 
-[PrankWeb](https://academic.oup.com/nar/article/50/W1/W593/6591527?login=false) is an online server for detecting and visualizing pockets: <br>
-https://prankweb.cz/
-
-## (A) fpocket
-
-fpocket is another tool that I am planning to use for protein pocket prediction in the near future. Also worth checking [MDPocket](https://academic.oup.com/bioinformatics/article/27/23/3276/234086) for tracking pockets in molecular dynamics trajectories.
-
-https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-10-168
-
-GitHub repository: <br>
-https://github.com/Discngine/fpocket
-
-[FPocketWeb](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00637-0) is an online server for detecting and visualizing pockets: <br>
-https://durrantlab.pitt.edu/fpocketweb/
+fpocket is another tool that I am planning to use for protein pocket prediction in the near future. Also worth checking [MDPocket](https://academic.oup.com/bioinformatics/article/27/23/3276/234086) for tracking pockets in molecular dynamics trajectories. [FPocketWeb](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00637-0) is an online server for detecting and visualizing pockets.
 
 [fpocket webserver](https://pubmed.ncbi.nlm.nih.gov/20478829/) is another online server for detecting and visualizing pockets: <br>
 https://bioserv.rpbs.univ-paris-diderot.fr/services/fpocket/
 
-## (A) SiteFerret
+## SiteFerret: beyond simple pocket identification in proteins
+
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jctc.2c01306) | [GitHub](https://github.com/concept-lab/SiteFerret) | Colab | Docker
 
 I created a Docker env for SiteFerret but I run into errors when trying to predict pockets on a PDB file. I am not planning on spending more time on this for the time being.
 
-https://pubs.acs.org/doi/10.1021/acs.jctc.2c01306
+# Pocket Comparison
 
-GitHub repository: <br>
-https://github.com/concept-lab/SiteFerret
+## PPS-align
 
-## (B) PPS-align
+[Paper](https://pubmed.ncbi.nlm.nih.gov/29462237/) | GitHub | [WebServer](https://zhanggroup.org/PPS-align/)
 
-Easy to use, but somewhat slow, pocket similarity comparison method.
+Easy to use, but somewhat slow, pocket similarity comparison method. It seems like PPS-align doesn't have a manuscript at this point and [LS-align](https://pubmed.ncbi.nlm.nih.gov/29462237/) might be alternative paper to cite for the time being. Online web server and source code are available through webserver.
 
-It seems like PPS-align doesn't have a manuscript at this point and [LS-align](https://pubmed.ncbi.nlm.nih.gov/29462237/) might be alternative paper to cite for the time being. 
 
-Online web server and source code are available through: <br>
-https://zhanggroup.org/PPS-align/
+## PDBspheres: Clustering Protein Binding Pockets and Identifying Potential Drug Interactions: A Novel Ligand-Based Featurization Method
 
-## (B) PDBspheres
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00722/) | [GitHub](https://github.com/LLNL/PDBspheres/blob/main/PDBspheres.README_INSTALLATION.txt) | Colab | Docker
 
-I did not try this one but it looks interesting:
+I did not try this one but it looks interesting.
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9549786/
+## Pocket Similarity: Are α Carbons Enough?
 
-https://pubs.acs.org/doi/10.1021/acs.jcim.3c00722
+[Manuscript](https://pubs.acs.org/doi/10.1021/ci100210c) | GitHub | Colab | Docker
 
-GitHub repository: <br>
-https://github.com/LLNL/PDBspheres/blob/main/PDBspheres.README_INSTALLATION.txt
+No source code implementation included for this methods but worth mentioning.
 
-## (B) Pocket Similarity: Are α Carbons Enough?
+# Reviews
 
-I generally prefer to avoid manuscripts that don't include source code implementation for their methods but it doesn't seem like this one could be a fun exercise to re-implement. 
+## Estimating the Similarity between Protein Pockets 
 
-https://pubs.acs.org/doi/10.1021/ci100210c
-
-## Review: Estimating the Similarity between Protein Pockets 
-
-https://www.mdpi.com/1422-0067/23/20/12462
+[Paper](https://www.mdpi.com/1422-0067/23/20/12462) |
 
 ## Get back to:
 
@@ -100,3 +82,5 @@ https://www.mdpi.com/1422-0067/23/20/12462
 * [PickPocket](https://www.biorxiv.org/content/10.1101/2020.04.15.042655v1.full.pdf)
 * [Ratar (WIP)](https://volkamerlab.org/projects/ratar/)
 * [PocketPipe](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6599441/)
+* [CRAFT](https://github.com/PGlab-NIPER/CRAFT/)
+* [GrASP](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01698)
