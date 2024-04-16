@@ -10,6 +10,11 @@ has_toc: false
 
 ## CV
 
-Updated on [(04.16.2024)](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv.pdf)
+PDF of updated version [(04.16.2024)](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv.pdf)
 
-<embed src="https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv.pdf" type="application/pdf"/>
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv_1.png)
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv_2.png)
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv_3.png)
+
