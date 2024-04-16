@@ -1,11 +1,13 @@
 ---
 layout: page
-title: Snakemake - RNA-seq 
-permalink: /workflows/rnaseq
-nav_order: 1
-parent: Workflows
+title: Coexpression
+permalink: /bioinformatics/workflows
+nav_order: 3
+parent: Bioinformatics
 has_toc: false
 ---
+
+The latest snakemake files can be found in my github bioinformatics-repo repository in the [GitHub repo](https://github.com/eporetsky/workflows). Additional information for specific workflows is provided in the specific sections below.
 
 ## Snakemake - RNA-seq
 
