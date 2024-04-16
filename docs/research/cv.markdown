@@ -10,5 +10,6 @@ has_toc: false
 
 ## CV
 
-[Elly Poretsky - CV (01.30.2022)](https://github.com/eporetsky/eporetsky.github.io/blob/master/imgs/eporetsky_cv.pdf)
-**(Updated CV coming up)**
+Updated on [(04.16.2024)](https://github.com/eporetsky/eporetsky.github.io/blob/master/pdfs/eporetsky_cv.pdf)
+
+<embed src="https://github.com/eporetsky/eporetsky.github.io/blob/master/pdfs/eporetsky_cv.pdf" type="application/pdf"/>
