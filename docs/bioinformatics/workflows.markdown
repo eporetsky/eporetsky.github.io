@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Coexpression
+title: Workflows
 permalink: /bioinformatics/workflows
 nav_order: 3
 parent: Bioinformatics

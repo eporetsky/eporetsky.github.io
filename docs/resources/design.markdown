@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Inverse Folding
-permalink: /resources/inverse-folding
+title: Protein Design
+permalink: /resources/design
 nav_order: 3
 parent: Resources
 has_toc: false
@@ -24,13 +24,13 @@ Generally speaking, inverse folding models are built for predicting protein sequ
 
 ## LigandMPNN: Atomic context-conditioned protein sequence design using LigandMPNN
 
-[Paper](https://www.biorxiv.org/content/10.1101/2023.12.22.573103v1) | [Github](https://github.com/dauparas/LigandMPNN/tree/main) | [Colab](https://colab.research.google.com/github/ullahsamee/ligandMPNN_Colab/blob/main/LigandMPNN_Colab.ipynb) | [Docker]() | [YouTube](https://www.youtube.com/watch?v=LFsxLVqPQho)
+[Paper](https://www.biorxiv.org/content/10.1101/2023.12.22.573103v1) | [Github](https://github.com/dauparas/LigandMPNN/tree/main) | [Colab](https://colab.research.google.com/github/ullahsamee/ligandMPNN_Colab/blob/main/LigandMPNN_Colab.ipynb) | Docker | [YouTube](https://www.youtube.com/watch?v=LFsxLVqPQho)
 
 ## ESM-IF1: A high-level programming language for generative protein design
 
 This model predicts protein sequences from backbone atom coordinates, trained on AF2 predicted structures. The model consists of invariant geometric input processing layers followed by a sequence-to-sequence transformer and can predict sequences for partially masked structures.
 
-[Paper](https://www.biorxiv.org/content/10.1101/2022.12.21.521526v1) | [Github](https://github.com/facebookresearch/esm?tab=readme-ov-file#invf) | [Colab](https://colab.research.google.com/github/facebookresearch/esm/blob/main/examples/inverse_folding/notebook.ipynb) | [Docker]() |
+[Paper](https://www.biorxiv.org/content/10.1101/2022.12.21.521526v1) | [Github](https://github.com/facebookresearch/esm?tab=readme-ov-file#invf) | [Colab](https://colab.research.google.com/github/facebookresearch/esm/blob/main/examples/inverse_folding/notebook.ipynb) | Docker |
 
 ## PiFold: Toward effective and efficient protein inverse folding
 
