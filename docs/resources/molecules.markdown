@@ -7,16 +7,6 @@ parent: Resources
 has_toc: false
 ---
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
-
 A collection of for processing and designing small molecules. \
 
 <details open markdown="block">
@@ -27,6 +17,7 @@ A collection of for processing and designing small molecules. \
 1. TOC
 {:toc}
 </details>
+
 
 ## DiffLinker: Equivariant 3D-conditional diffusion model for molecular linker design
 
