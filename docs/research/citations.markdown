@@ -14,6 +14,7 @@ has_toc: false
 <details close markdown="block">
   <summary>
     <u>Poretsky, E.</u>, Cagirici, H. B., Andorf, C. M., & Sen, T. Z. (2024). Harnessing the predicted maize pan-interactome for putative gene function prediction and prioritization of candidate genes for important traits.
+    
     [Paper](https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkae059/7630293?login=false){: .btn .btn-purple }
     [GitHub](https://github.com/eporetsky/PanPPI){: .btn .btn-purple }
   </summary>
@@ -23,6 +24,7 @@ The recent assembly and annotation of the 26 maize nested association mapping po
 <details close markdown="block">
   <summary>
     <u>Poretsky, E.</u>, Andorf, C. M., & Sen, T. Z. (2023). PhosBoost: Improved phosphorylation prediction recall using gradient boosting and protein language models. Plant Direct, 7(12), e554.
+
     [Paper](https://onlinelibrary.wiley.com/doi/full/10.1002/pld3.554){: .btn .btn-purple }
     [GitHub](https://github.com/eporetsky/PhosBoost){: .btn .btn-purple }
   </summary>
