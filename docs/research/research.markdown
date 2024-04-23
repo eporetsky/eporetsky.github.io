@@ -9,7 +9,7 @@ has_toc: false
 
 # General research interests
 
-## 1. Developing ML models: Learning from protein panguage models (PLMs) and predicted structures 
+## 1. Developing ML models: Learning from protein language models (PLMs) and predicted structures 
 
 Protein phosphorylation is a post-translational modification that can alter the structure and function of proteins. PhosBoost is a machine learning approach that leverages protein language models and gradient boosting trees to predict protein phosphorylation from experimentally derived data. PhosBoost offers improved performance when recall is prioritized while consistently providing more confident probability scores.
 
