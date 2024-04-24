@@ -7,7 +7,7 @@ parent: Resources
 has_toc: false
 ---
 
-Pocket detection in protein structures is important for understanding protein function and regulation, and finding possible druggable sites. As such, there are a lot of different packages and online servers that can be used. From my brief survey of published work, it seems to me that many packages either don't work out of the box, do not provide source code or are behind a proprietary academic/commercial licensing. Perhaps even more so when looking at method used protein pocket similarity comparisons. While the list I'm compiling below is not going to be comprehensive, I am going to add some links to reviews that survey the available methods in the field. See my [PlantDiffucion/pockets](https://github.com/eporetsky/PlantDiffusion/tree/main/pockets) GitHub page to find additional instructions and Docker files for running protein pocket prediction and comparison methods. For convenience, the table of content is split into two related sections: (A) protein pocket detection methods and (B) protein pocket similarity comparison methods. 
+Pocket detection in protein structures is important for understanding protein function and regulation, and finding possible druggable sites. As such, there are a lot of different packages and online servers that can be used. From my brief survey of published work, it seems to me that many packages either don't work out of the box, do not provide source code or are behind a proprietary academic/commercial licensing. Perhaps even more so when looking at method used protein pocket similarity comparisons. While the list I'm compiling below is not going to be comprehensive, I am going to add some links to reviews that survey the available methods in the field. See my [PlantDiffusion/pockets](https://github.com/eporetsky/PlantDiffusion/tree/main/pockets) GitHub page to find additional instructions and Docker files for running protein pocket prediction and comparison methods. For convenience, the table of content is split into two related sections: (A) protein pocket detection methods and (B) protein pocket similarity comparison methods. 
 
 <details open markdown="block">
   <summary>
@@ -42,6 +42,10 @@ https://bioserv.rpbs.univ-paris-diderot.fr/services/fpocket/
 
 I created a Docker env for SiteFerret but I run into errors when trying to predict pockets on a PDB file. I am not planning on spending more time on this for the time being.
 
+## DeepPocket: Ligand Binding Site Detection and Segmentation using 3D Convolutional Neural Networks
+
+[Paper](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00799) | [GitHub](https://github.com/devalab/DeepPocket)
+
 # Pocket Comparison
 
 ## PPS-align
@@ -50,6 +54,15 @@ I created a Docker env for SiteFerret but I run into errors when trying to predi
 
 Easy to use, but somewhat slow, pocket similarity comparison method. It seems like PPS-align doesn't have a manuscript at this point and [LS-align](https://pubmed.ncbi.nlm.nih.gov/29462237/) might be alternative paper to cite for the time being. Online web server and source code are available through webserver.
 
+## DeeplyTough: Learning Structural Comparison of Protein Binding Sites
+
+[Paper](https://pubs.acs.org/doi/full/10.1021/acs.jcim.9b00554) | [GitHub](https://github.com/BenevolentAI/DeeplyTough/tree/master?tab=readme-ov-file)
+
+Dockerfile included in the GitHub repository.
+
+## G-LoSA: An Efficient Computational Tool for Local Structure-Centric Biological Studies and Drug Design
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/26813336/) | [Website](https://compbio.lehigh.edu/GLoSA/)
 
 ## PDBspheres: Clustering Protein Binding Pockets and Identifying Potential Drug Interactions: A Novel Ligand-Based Featurization Method
 
@@ -62,6 +75,12 @@ I did not try this one but it looks interesting.
 [Manuscript](https://pubs.acs.org/doi/10.1021/ci100210c) | GitHub | Colab | Docker
 
 No source code implementation included for this methods but worth mentioning.
+
+# Pocket-based Molecule Design
+
+## Pocket2Mol: Efficient Molecular Sampling Based on 3D Protein Pockets
+
+[Paper](https://arxiv.org/abs/2205.07249) | [GitHub](https://github.com/pengxingang/Pocket2Mol) | [Colab](https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/Pocket2Mol.ipynb)
 
 # Reviews
 

@@ -45,10 +45,8 @@ As far as I can tell, NeuralPLexer is not available online and is not open-sourc
 ## Reviews
 
 * [The Art and Science of Molecular Docking](https://www.annualreviews.org/content/journals/10.1146/annurev-biochem-030222-120000)
+* [Structure-Based Drug Discovery with Deep Learning](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cbic.202200776?casa_token=oFYIbuG_I-YAAAAA%3AHr7AYBASZExKWWLLO0-z03ewE5jifnDzPC-N_yPYYKAiuhObuaOWPnsBQ3Xq2jbUAppJslnRPBY34sTo)
 
-## Colelctions
+## Collections
 * [awesome-molecular-generation](https://github.com/amorehead/awesome-molecular-generation)
 * [awesome-molecular-docking](https://github.com/Thinklab-SJTU/awesome-molecular-docking)
-
-## 
-

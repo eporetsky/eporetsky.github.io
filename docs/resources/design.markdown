@@ -50,4 +50,8 @@ This model predicts protein sequences from backbone atom coordinates, trained on
 
 ## ProteinInvBench: Benchmarking Protein Inverse Folding on Diverse Tasks, Models, and Metrics
 
-[Paper](https://openreview.net/pdf?id=bqXduvuW5E) | [GitHub](https://github.com/A4Bio/ProteinInvBench) | 
+[Paper](https://openreview.net/pdf?id=bqXduvuW5E) | [GitHub](https://github.com/A4Bio/ProteinInvBench)
+
+## Protein Structure and Sequence Generation with Equivariant Denoising Diffusion Probabilistic Models
+
+[Paper](https://arxiv.org/pdf/2205.15019.pdf) | [Website](https://nanand2.github.io/proteins/) | [Talk](https://www.youtube.com/watch?v=i8fGzddGbU8)
