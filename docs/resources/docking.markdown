@@ -16,21 +16,39 @@ has_toc: false
 {:toc}
 </details>
 
+# Generative molecular docking
 
-## DiffDock
+## DiffDock: Deep Confident Steps to New Pockets: Strategies for Docking Generalization
 
-Fast and easy to use docking method. Requires as little as a protein structure and molecule SMILES to go started.
+[Paper](https://arxiv.org/abs/2402.18396) | [GitHub](https://github.com/gcorso/DiffDock) | [HuggingFace](https://huggingface.co/spaces/reginabarzilaygroup/DiffDock-Web) | [Docker*](https://hub.docker.com/r/externelly/diffdock)
 
-https://arxiv.org/pdf/2210.01776.pdf
+Fast and easy to use docking method. Requires as little as a protein structure and molecule SMILES to go started. Note that DiffDock was updated in February 2024, with the updated version named DiffDock-L. Additional information about the original version and manuscript can be found in the GitHub repository.
 
-Easy to use HuggingFace implementation: <br>
-https://huggingface.co/spaces/simonduerr/diffdock
+/* I have created the linked DiffDock-L Docker image. You can find detailed instructions in the Docker Hub page.
 
-Can also run it on a Google colab notebook: <br>
-https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/DiffDock.ipynb
+## DynamicBind: predicting ligand-specific protein-ligand complex structure with a deep equivariant generative model
 
-## NeuralPLexer
+[Paper](https://www.nature.com/articles/s41467-024-45461-2) | [GitHub](https://github.com/luwei0917/DynamicBind) | HuggingFace | Docker*
 
-As far as I can tell, NeuralPLexer is not available online and is not open-source. I think it would have been very popular if it was open-source. 
+A molecular docking method in which both the protein and the ligand are docked in a flexible manner. 
 
-https://arxiv.org/pdf/2209.15171.pdf
+/* I am in the process of creating a Docker image for DynamicBind. Will update shortly. 
+
+## NeuralPLexer: State-specific protein–ligand complex structure prediction with a multiscale deep generative model
+
+As far as I can tell, NeuralPLexer is not available online and is not open-source. I will update this section if it becomes open-source.
+
+[Paper](https://www.nature.com/articles/s42256-024-00792-z) | [GitHub](https://github.com/zrqiao/NeuralPLexer)
+
+# Additional resources
+
+## Reviews
+
+* [The Art and Science of Molecular Docking](https://www.annualreviews.org/content/journals/10.1146/annurev-biochem-030222-120000)
+
+## Colelctions
+* [awesome-molecular-generation](https://github.com/amorehead/awesome-molecular-generation)
+* [awesome-molecular-docking](https://github.com/Thinklab-SJTU/awesome-molecular-docking)
+
+## 
+
