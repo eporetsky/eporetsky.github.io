@@ -2,7 +2,7 @@
 layout: page
 title: Workflows
 permalink: /bioinformatics/workflows
-nav_order: 3
+nav_order: 2
 parent: Bioinformatics
 has_toc: false
 ---

@@ -53,7 +53,7 @@ https://bioserv.rpbs.univ-paris-diderot.fr/services/fpocket/
 
 I created a Docker env for SiteFerret but I run into errors when trying to predict pockets on a PDB file. I am not planning on spending more time on this for the time being.
 
-## Ligand Binding Site Detection and Segmentation using 3D Convolutional Neural Networks
+## DeepPocket
 
 **DeepPocket: Ligand Binding Site Detection and Segmentation using 3D Convolutional Neural Networks**
 
@@ -64,7 +64,7 @@ I created a Docker env for SiteFerret but I run into errors when trying to predi
 
 ## PPS-align
 
-[Paper](){: .btn }
+[Paper](#){: .btn }
 [GitHub](https://pubmed.ncbi.nlm.nih.gov/29462237){: .btn .btn-blue }
 [Webserver](https://pubmed.ncbi.nlm.nih.gov/29462237){: .btn .btn-green }
 
@@ -84,7 +84,7 @@ Dockerfile included in the GitHub repository.
 **G-LoSA: An Efficient Computational Tool for Local Structure-Centric Biological Studies and Drug Design**
 
 [Paper](https://pubmed.ncbi.nlm.nih.gov/26813336){: .btn .btn-purple }
-[GitHub](){: .btn }
+[GitHub](#){: .btn }
 [Webserver](https://compbio.lehigh.edu/GLoSA){: .btn .btn-green }
 
 ## PDBspheres
@@ -93,12 +93,6 @@ Dockerfile included in the GitHub repository.
 
 [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00722){: .btn .btn-purple }
 [GitHub](https://github.com/LLNL/PDBspheres/blob/main/PDBspheres.README_INSTALLATION.txt){: .btn .btn-blue }
-
-## Pocket Similarity: Are α Carbons Enough?
-
-[Manuscript](https://pubs.acs.org/doi/10.1021/ci100210c) | GitHub | Colab | Docker
-
-No source code implementation included for this methods but worth mentioning.
 
 # Pocket-based Molecule Design
 
@@ -112,6 +106,7 @@ No source code implementation included for this methods but worth mentioning.
 
 ## Additional resources
 
+* [Pocket Similarity: Are α Carbons Enough?](https://pubs.acs.org/doi/10.1021/ci100210c)
 * [Estimating the Similarity between Protein Pockets](https://www.mdpi.com/1422-0067/23/20/12462)
 * [Protein-Ligand Interaction Clusters (PLIC)](https://academic.oup.com/database/article/doi/10.1093/database/bau029/2634082)
 * [GHECOM](https://pdbj.org/ghecom/)
