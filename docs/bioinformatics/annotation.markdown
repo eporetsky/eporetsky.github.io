@@ -2,7 +2,7 @@
 layout: page
 title: Annotation
 permalink: /bioinformatics/annotation
-nav_order: 4
+nav_order: 5
 parent: Bioinformatics
 has_toc: false
 ---

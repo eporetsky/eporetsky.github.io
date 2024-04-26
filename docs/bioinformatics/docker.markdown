@@ -32,17 +32,19 @@ WIP
 
 ## AlphaFill
 
+AlphaFill can be used to transplant ligands from experimental structures to predicted structures based on structure similairty. This AlphaFill Docker image can be used to run the stand-alone version of AlphaFill. Additional instructions and details are provided in the Docker Hub page.
+
 [Docker Hub](https://hub.docker.com/r/externelly/alphafill){: .btn .btn-purple }
 [GitHub Dockerfile](https://github.com/eporetsky/workflows/blob/main/Docker/AlphaFill/Dockerfile){: .btn .btn-blue }
 
 ## P2Rank
 
 [Docker Hub](https://hub.docker.com/r/externelly/p2rank){: .btn .btn-purple }
-[GitHub Dockerfile](){: .btn .btn-blue }
+[GitHub Dockerfile](){: .btn .btn-blue  .disabled }
 
 ## PanPPI
 
-A Python Dash web-app that I built to explore the PanPPI data we generated using the maize pan-genomes, as explained in this [G3:Genes|Genomes|Genetics](https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkae059/7630293) paper. Currently there is only a Docker image for the Dash app with the maize data included, but I am planning to add a Docker image for running the analysis workflow for custom pan-genomes and custom data.
+A Python Dash web-app that I built to explore the PanPPI data we generated using the maize pan-genomes, as explained in this [G3:Genes\|Genomes\|Genetics](https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkae059/7630293) paper. Currently there is only a Docker image for the Dash app with the maize data included, but I am planning to add a Docker image for running the analysis workflow for custom pan-genomes and custom data.
 
 [Docker Hub](https://hub.docker.com/r/externelly/panppi){: .btn .btn-purple }
 [GitHub Dockerfile](){: .btn .btn-blue }

@@ -64,7 +64,7 @@ I created a Docker env for SiteFerret but I run into errors when trying to predi
 
 ## PPS-align
 
-[Paper](#){: .btn }
+[Paper](){: .btn .disabled }
 [GitHub](https://pubmed.ncbi.nlm.nih.gov/29462237){: .btn .btn-blue }
 [Webserver](https://pubmed.ncbi.nlm.nih.gov/29462237){: .btn .btn-green }
 
@@ -84,7 +84,7 @@ Dockerfile included in the GitHub repository.
 **G-LoSA: An Efficient Computational Tool for Local Structure-Centric Biological Studies and Drug Design**
 
 [Paper](https://pubmed.ncbi.nlm.nih.gov/26813336){: .btn .btn-purple }
-[GitHub](#){: .btn }
+[GitHub](){: .btn .disabled }
 [Webserver](https://compbio.lehigh.edu/GLoSA){: .btn .btn-green }
 
 ## PDBspheres
