@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Protein Dynamics
-permalink: /resources/protein-dynamics
+title: Protein Conformations
+permalink: /resources/protein-conformations
 nav_order: 4
 parent: Resources
 has_toc: false

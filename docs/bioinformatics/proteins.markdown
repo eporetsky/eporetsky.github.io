@@ -66,7 +66,7 @@ pr.writePDB('{}.afill.pdb'.format(af2_id), structure)
 
 Now you can submit the modified AlphaFill PDB file (UGT72B27.afill.pdb) to the [PLIP webserver](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index) to identify which protein residues interact with the different ligand atoms. As you can see in the image below, PLIP identified 13 hydrogen bonds and 2 salt bridges between the protein residues and the UDP ligand.
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/UGT72B27.afill.PLIP.jpg?raw=true){: width="500" }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/UGT72B27.afill.PLIP.jpg?raw=true)
 
 NOTE: AlphaFill does not guarantee that the transplanted ligand occupies the correct position and pose in the predicted structure, nor does it guarantee that it is an actual ligand for the predicted structure. The resulting AlphaFill structure and predicted interactions by PLIP should be carefully assessed.
 
@@ -86,6 +86,6 @@ AlphaFill transplants ligands from experimentally determined structures to predi
 
 I am calling this approach AlphaFill-Relax, to borrow from the AlphaFold-Relax method. The link above will take you to the [Colab notebook](https://colab.research.google.com/github/eporetsky/workflows/blob/main/Colab/alphafill_relax.ipynb), linked the [jupyter notebook](https://github.com/eporetsky/workflows/blob/main/Colab/alphafill_relax.ipynb) in my GitHub repository. As the explanation in the notebook says: This is a very preliminary approach that was not peer-reviewed nor extensively tested. It is completely based on the ***Making it rain: Cloud-based molecular simulations for everyone***\" ([link to paper](https://doi.org/10.1021/acs.jcim.1c00998)) Colab notebook for running Molecular Dynamics (MD) simulations using OpenMM engine and AMBER force field [link to notebook](https://colab.research.google.com/github/pablo-arantes/Making-it-rain/blob/main/Amber.ipynb), and uses just the Equilibration MD step with default parameters and a very short 20ps simulation time (taking a few minutes to complete using the T4 GPU node). Below is the before-and-after comparison of the Mg cofactor ligands that were transplanted to the AlphaFold2 structure of a terpene synthase [O81086](https://alphafill.eu/model?id=O81086). From the animation above, it doesn't look like the 20ps MD simulation has changed much, but an analysis of the original AlphaFill PDB file and the relaxed PDB file shows a large incread in the number of interactions (PLIP results, default parameters), including a better agreement with the conserved DDXXD motif involved in Mg binding.
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/alphafill_relax.jpg?raw=true){: width="400" }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/alphafill_relax.jpg?raw=true)
 
 As a note, I have only tested AlphaFill-Relax on metal cofactor ligands, and have yet to test it on any other type of AlphaFill-transplanted ligands.
