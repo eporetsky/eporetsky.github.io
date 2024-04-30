@@ -46,29 +46,48 @@ https://www.tanerkaragol.com/post/molecular-dynamics-on-google-compute-engine-aw
 Instructions available at: <br>
 https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
 
-# Conformations
+# Protein Conformation Prediction
 
-## High-throughput prediction of protein conformational distributions with subsampled AlphaFold2
+## Subsampled AF2
 
-[Paper](https://www.nature.com/articles/s41467-024-46715-9) | [GitHub](https://github.com/GMdSilva/gms_natcomms_1705932980_data) | [Coalab](https://colab.research.google.com/drive/1BhOsy9UL41mE0UN5eYiMxwpFXkQAA8iE)
+**High-throughput prediction of protein conformational distributions with subsampled AlphaFold2**
 
-## Predicting multiple conformations via sequence clustering and AlphaFold2
+[Paper](https://www.nature.com/articles/s41467-024-46715-9){: .btn .btn-purple }
+[GitHub](https://github.com/GMdSilva/gms_natcomms_1705932980_data){: .btn .btn-blue }
+[Colab](https://colab.research.google.com/github/GMdSilva/gms_natcomms_1705932980_data/blob/main/AlphaFold2_Traj_v1.ipynb){: .btn .btn-green }
 
-[Paper](https://www.nature.com/articles/s41586-023-06832-9) | [GitHub](https://github.com/HWaymentSteele/AF_Cluster) | [Colab](https://colab.research.google.com/github/HWaymentSteele/AF_Cluster/blob/main/AFcluster.ipynb)
+## AFCluster
 
-## AF2Complex predicts direct physical interactions in multimeric proteins with deep learning
+**Predicting multiple conformations via sequence clustering and AlphaFold2**
 
-[Paper](https://www.nature.com/articles/s41467-022-29394-2) | [GitHub](https://github.com/FreshAirTonight/af2complex) | [Colab](https://colab.research.google.com/github/FreshAirTonight/af2complex/blob/main/notebook/AF2Complex_notebook.ipynb)
+[Paper](https://www.nature.com/articles/s41586-023-06832-9){: .btn .btn-purple }
+[GitHub](https://github.com/HWaymentSteele/AF_Cluster){: .btn .btn-blue }
+[Colab](https://colab.research.google.com/github/HWaymentSteele/AF_Cluster/blob/main/AFcluster.ipynb){: .btn .btn-green }
 
-## Searching for Structure: Characterizing the Protein Conformational Landscape with Clustering-Based Algorithms
+## AF2Complex 
 
-[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01511) | [GitHub](https://github.com/DimaUClab/StELa-Protein-Structure-Clustering-Algorithm)
+**AF2Complex predicts direct physical interactions in multimeric proteins with deep learning**
 
-## Sampling alternative conformational states of transporters and receptors with AlphaFold2
+[Paper](https://www.nature.com/articles/s41467-022-29394-2){: .btn .btn-purple }
+[GitHub](https://github.com/FreshAirTonight/af2complex){: .btn .btn-blue }
+[Colab](https://colab.research.google.com/github/FreshAirTonight/af2complex/blob/main/notebook/AF2Complex_notebook.ipynb){: .btn .btn-green }
 
-[Paper](https://elifesciences.org/articles/75751) | [GitHub](https://github.com/delalamo/af2_conformations)
+
+## StELa
+
+**Searching for Structure: Characterizing the Protein Conformational Landscape with Clustering-Based Algorithms**
+
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01511){: .btn .btn-purple }
+[GitHub](https://github.com/DimaUClab/StELa-Protein-Structure-Clustering-Algorithm){: .btn .btn-blue }
+
+## Af2 Conformations
+
+**Sampling alternative conformational states of transporters and receptors with AlphaFold2**
+
+[Paper](https://elifesciences.org/articles/75751){: .btn .btn-purple }
+[GitHub](https://github.com/delalamo/af2_conformations){: .btn .btn-blue }
 
 # Other
 
 * [Protein-ligand MD simulations](https://github.com/hgbrian/MD_protein_ligand) and on [Colab](https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/MD_protein_ligand.ipynb)
-
+* [Making a movie from an AMBER trajectory using VMD](https://amberhub.chpc.utah.edu/making-movies/)
