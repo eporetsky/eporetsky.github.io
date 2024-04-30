@@ -16,6 +16,10 @@ has_toc: false
 {:toc}
 </details>
 
+## Molecular docking and protein-ligand interactions
+
+Work in progress. You can find some relevant information in my [protein page](https://eporetsky.github.io/bioinformatics/proteins).
+
 ## PhosBoost
 
 PhosBoost is a machine learning approach that leverages protein language models and gradient boosting trees to predict protein phosphorylation from experimentally derived data. PhosBoost offers improved performance when recall is prioritized while consistently providing more confident probability scores.
