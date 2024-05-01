@@ -22,13 +22,16 @@ Work in progress. You can find some relevant information in my [protein page](ht
 
 ## PhosBoost
 
+<a target="_blank" href="https://colab.research.google.com/github/eporetsky/workflows/blob/main/Colab/PhosBoost.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 PhosBoost is a machine learning approach that leverages protein language models and gradient boosting trees to predict protein phosphorylation from experimentally derived data. PhosBoost offers improved performance when recall is prioritized while consistently providing more confident probability scores.
 
 [Plant Direct](https://onlinelibrary.wiley.com/doi/full/10.1002/pld3.554){: .btn .btn-purple }
 [GitHub](https://github.com/eporetsky/PhosBoost){: .btn .btn-blue }
 
 <u>Poretsky, E.</u>, Andorf, C. M., & Sen, T. Z. (2023). PhosBoost: Improved phosphorylation prediction recall using gradient boosting and protein language models. Plant Direct, 7(12), e554.
-
 
 
 ## PanPPI

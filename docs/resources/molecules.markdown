@@ -20,32 +20,55 @@ A collection of for processing and designing small molecules. \
 
 # General methods
 
-## DiffLinker: Equivariant 3D-conditional diffusion model for molecular linker design
+## DiffLinker
 
-[Paper](https://www.nature.com/articles/s42256-024-00815-9) | [Github](https://github.com/igashov/DiffLinker) | Colab | [HuggingFace](https://huggingface.co/spaces/igashov/DiffLinker) | Docker
+**DiffLinker: Equivariant 3D-conditional diffusion model for molecular linker design**
 
-## ChemBERTa-2: Towards Chemical Foundation Models
+[Paper](https://www.nature.com/articles/s42256-024-00815-9){: .btn .btn-purple }
+[GitHub](https://github.com/igashov/DiffLinker){: .btn .btn-blue }
+[HuggingFace](https://huggingface.co/spaces/igashov/DiffLinker){: .btn .btn-green }
+
+## ChemBERTa-2
+
+**ChemBERTa-2: Towards Chemical Foundation Models**
+
+[Paper](https://arxiv.org/abs/2209.01712){: .btn .btn-purple }
+[GitHub](https://github.com/seyonechithrananda/bert-loves-chemistry){: .btn .btn-blue }
+[HuggingFace](https://huggingface.co/seyonec){: .btn .btn-green }
 
 A collection of BERT-like models applied to chemical SMILES data for drug design, chemical modelling, and property prediction.
 
-[Paper](https://arxiv.org/abs/2209.01712) | [Github](https://github.com/seyonechithrananda/bert-loves-chemistry) | Colab | [HuggingFace](https://huggingface.co/seyonec) | Docker
+## Chemprop
 
-## Chemprop: A Machine Learning Package for Chemical Property Prediction
+**Chemprop: A Machine Learning Package for Chemical Property Prediction**
 
-[Paper](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c01250) | [GitHub](https://github.com/chemprop/chemprop)
+[Paper](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c01250){: .btn .btn-purple }
+[GitHub](https://github.com/chemprop/chemprop){: .btn .btn-blue }
 
-## NP_Fingerprints: Effectiveness of molecular fingerprints for exploring the chemical space of natural products
+## NP_Fingerprints
+
+**NP_Fingerprints: Effectiveness of molecular fingerprints for exploring the chemical space of natural products**
+
+[Paper](https://link.springer.com/article/10.1186/s13321-024-00830-3){: .btn .btn-purple }
+[GitHub](https://github.com/dahvida/NP_Fingerprints){: .btn .btn-blue }
 
 An evaluation of different molecular fingerprinting methods with code to reproduce the results.
 
-[Paper](https://link.springer.com/article/10.1186/s13321-024-00830-3) | [GitHub](https://github.com/dahvida/NP_Fingerprints)
+## LIMO
 
-## LIMO: Latent Inceptionism for Targeted Molecule Generation
+**LIMO: Latent Inceptionism for Targeted Molecule Generation**
 
-[Paper](https://arxiv.org/pdf/2206.09010.pdf) | [GitHub](https://github.com/Rose-STL-Lab/LIMO) | [Webserver](https://www.limo-aimd.com/)
+[Paper](https://arxiv.org/pdf/2206.09010.pdf){: .btn .btn-purple }
+[GitHub](https://github.com/Rose-STL-Lab/LIMO){: .btn .btn-blue }
+[WebServer](https://www.limo-aimd.com){: .btn .btn-green }
 
 # Metal Ions
 
-## MIB: Metal Ion-Binding Site Prediction and Docking Server
+## MIB
 
-[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.6b00407) | [Website](https://bioinfo.cmu.edu.tw/MIB/)
+**MIB: Metal Ion-Binding Site Prediction and Docking Server**
+
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.6b00407){: .btn .btn-purple }
+[Website](https://bioinfo.cmu.edu.tw/MIB){: .btn .btn-blue }
+
+# Additional resources

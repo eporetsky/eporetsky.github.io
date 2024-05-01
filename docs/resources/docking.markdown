@@ -81,6 +81,12 @@ A repository with a couple of different Colab notebooks for running GNINA (molec
 
 A collection of Colab notebooks, including some related to molecular docking.
 
+## DOCKSTRING
+
+**DOCKSTRING: easy molecular docking yields better benchmarks for ligand design**
+
+[Paper](https://arxiv.org/abs/2110.15486) | [Webpage](https://dockstring.github.io/) | [GitHub](https://github.com/dockstring/dockstring)
+
 # Additional resources
 
 ## Reviews
