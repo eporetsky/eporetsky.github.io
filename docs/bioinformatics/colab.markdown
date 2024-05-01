@@ -28,7 +28,7 @@ I have been working on creating Colab notebooks for a number of bioinformatics p
 
 A Colab notebook I prepared for predicting protein phosphorylation sites for a user-provided protein, based on our PhosBoost manuscript. The Colab notebook runs fast on a CPU node, so it should also work with a free account. Additional details can be found in the paper, GitHub repository, and the Colab notebook.
 
-[{Paper}](https://github.com/eporetsky/PhosBoost){: .btn .btn-purple }
+[Paper](https://github.com/eporetsky/PhosBoost){: .btn .btn-purple }
 [GitHub](https://onlinelibrary.wiley.com/doi/10.1002/pld3.554){: .btn .btn-blue }
 
 

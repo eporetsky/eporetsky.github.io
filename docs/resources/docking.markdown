@@ -85,7 +85,9 @@ A collection of Colab notebooks, including some related to molecular docking.
 
 **DOCKSTRING: easy molecular docking yields better benchmarks for ligand design**
 
-[Paper](https://arxiv.org/abs/2110.15486) | [Webpage](https://dockstring.github.io/) | [GitHub](https://github.com/dockstring/dockstring)
+[Paper](https://arxiv.org/abs/2110.15486){: .btn .btn-purple }
+[GitHub](https://github.com/dockstring/dockstring){: .btn .btn-blue }
+[Webpage](https://dockstring.github.io){: .btn .btn-green }
 
 # Additional resources
 

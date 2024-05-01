@@ -2,7 +2,7 @@
 layout: page
 title: CV
 permalink: /research/CV
-nav_order: 3
+nav_order: 4
 parent: Research
 has_toc: false
 ---

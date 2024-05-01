@@ -18,14 +18,11 @@ I have been working on creating Docker images for a number of bioinformatics too
 {:toc}
 </details>
 
-
-# Creating a Docker image
-
-WIP
-
 # My Docker images
 
 ## DiffDock
+
+DiffDock can be used to run molecular docking analyses of specified small molecules and a given protein structure. 
 
 [Docker Hub](https://hub.docker.com/r/externelly/diffdock){: .btn .btn-purple }
 [GitHub Dockerfile](https://github.com/eporetsky/workflows/blob/main/Docker/DiffDock/Dockerfile){: .btn .btn-blue }

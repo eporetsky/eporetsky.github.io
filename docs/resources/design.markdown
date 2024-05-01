@@ -73,9 +73,11 @@ This model predicts protein sequences from backbone atom coordinates, trained on
 [Paper](https://www.nature.com/articles/s41467-023-43166-6){: .btn .btn-purple }
 [GitHub](https://github.com/veghen/ProRefiner){: .btn .btn-blue }
 [Colab](https://colab.research.google.com/drive/1a6VW-BB0twEwL65sE_dUAM42wdSm6RZp){: .btn .btn-green }
-[Colab](https://codeocean.com/capsule/9492154/tree/v2){: .btn .btn-green }
+[CodeOcean](https://codeocean.com/capsule/9492154/tree/v2){: .btn .btn-green }
 
-## Protein Structure and Sequence Generation with Equivariant Denoising Diffusion Probabilistic Models
+## nanand2/proteins
+
+**Protein Structure and Sequence Generation with Equivariant Denoising Diffusion Probabilistic Models**
 
 [Paper](https://arxiv.org/pdf/2205.15019.pdf){: .btn .btn-purple }
 [GitHub](https://nanand2.github.io/proteins){: .btn .btn-blue }
