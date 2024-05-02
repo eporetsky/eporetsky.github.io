@@ -72,7 +72,6 @@ https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
 [GitHub](https://github.com/FreshAirTonight/af2complex){: .btn .btn-blue }
 [Colab](https://colab.research.google.com/github/FreshAirTonight/af2complex/blob/main/notebook/AF2Complex_notebook.ipynb){: .btn .btn-green }
 
-
 ## StELa
 
 **Searching for Structure: Characterizing the Protein Conformational Landscape with Clustering-Based Algorithms**
@@ -87,7 +86,7 @@ https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
 [Paper](https://elifesciences.org/articles/75751){: .btn .btn-purple }
 [GitHub](https://github.com/delalamo/af2_conformations){: .btn .btn-blue }
 
-# Other
+# Additional resources
 
 * [Protein-ligand MD simulations](https://github.com/hgbrian/MD_protein_ligand) and on [Colab](https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/MD_protein_ligand.ipynb)
 * [Making a movie from an AMBER trajectory using VMD](https://amberhub.chpc.utah.edu/making-movies/)

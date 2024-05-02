@@ -104,7 +104,7 @@ Dockerfile included in the GitHub repository.
 [GitHub](https://github.com/pengxingang/Pocket2Mol){: .btn .btn-blue }
 [Colab](https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/Pocket2Mol.ipynb){: .btn .btn-green }
 
-## Additional resources
+# Additional resources
 
 * [Pocket Similarity: Are α Carbons Enough?](https://pubs.acs.org/doi/10.1021/ci100210c)
 * [Estimating the Similarity between Protein Pockets](https://www.mdpi.com/1422-0067/23/20/12462)

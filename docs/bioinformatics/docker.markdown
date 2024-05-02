@@ -18,8 +18,6 @@ I have been working on creating Docker images for a number of bioinformatics too
 {:toc}
 </details>
 
-# My Docker images
-
 ## DiffDock
 
 DiffDock can be used to run molecular docking analyses of specified small molecules and a given protein structure. 
@@ -48,7 +46,14 @@ A Python Dash web-app that I built to explore the PanPPI data we generated using
 
 ## PhylogenyZ
 
-An environment to run simple phylogenetic analyses, meant primarily for building protein trees. The general workflow I use is: (1) protein alignmnet using FAMSA, (2) alignment trimming using ClipKIT, and (3) building the phylogenetic tree using IQ-TREE 2.
+An environment to run simple phylogenetic analyses, meant primarily for building protein trees. The general workflow I use is: (1) protein alignmnet using FAMSA, (2) alignment trimming using ClipKIT, and (3) building the phylogenetic tree using IQ-TREE2.
 
 [Docker Hub](https://hub.docker.com/r/externelly/phylogenyz){: .btn .btn-purple }
 [GitHub Dockerfile](){: .btn .btn-blue }
+
+## Chainsaw
+
+An Docker image for running [Chainsaw](https://github.com/JudeWells/chainsaw), a protein domain segmentation based on a given PDB structure. 
+
+[Docker Hub](https://hub.docker.com/r/externelly/chainsaw){: .btn .btn-purple }
+[GitHub Dockerfile](https://github.com/eporetsky/workflows/blob/main/Docker/Chainsaw/Dockerfile){: .btn .btn-blue }

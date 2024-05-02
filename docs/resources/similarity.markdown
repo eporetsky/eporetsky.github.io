@@ -2,12 +2,10 @@
 layout: page
 title: Protein Similarity
 permalink: /resources/protein-similarity
-nav_order: 4
+nav_order: 5
 parent: Resources
 has_toc: false
 ---
-
-Movements and confirmational changes within proteins are important for understanding protein function. Common methods for studying protein dynamics include molecular dynamics (MD) simulations and normal model analyses (NMA). Deep learning methods have also been applied to probe protein dynamics.
 
 <details open markdown="block">
   <summary>
@@ -47,5 +45,5 @@ Generally speaking, averaging protein embedding vectors over a whole protein can
 [GitHub](https://github.com/mesihk/prost){: .btn .btn-blue }
 [Webserver](https://mesihk.github.io/prost){: .btn .btn-green }
 
-# Additional Resources
+# Additional resources
 

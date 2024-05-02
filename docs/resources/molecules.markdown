@@ -2,12 +2,12 @@
 layout: page
 title: Small Molecules
 permalink: /resources/molecules
-nav_order: 5
+nav_order: 6
 parent: Resources
 has_toc: false
 ---
 
-A collection of for processing and designing small molecules. \
+A collection of for processing and designing small molecules.
 
 <details open markdown="block">
   <summary>
