@@ -37,12 +37,9 @@ search_enabled: true
 
 plugins:
   - jekyll-feed
-  - jekyll-analytics
 
-jekyll_analytics:
-  GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: G-JW0N93QGY1          # Required - replace with your tracking id
-    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+ga_tracking: G-JW0N93QGY1
+ga_tracking_anonymize_ip: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
