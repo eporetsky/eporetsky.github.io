@@ -24,7 +24,7 @@ This section includes code for processing and analyzing different aspects of pro
 
 We are going to use the ColabFold predicted strure of the grape UGT72B27 uridine diphosphate-dependent glycosyltransferase (UGT) as an example. The AlphaFill webserver can be used to transplant a uridine diphosphate (UGT) ligand from the experimental 2VG8 structure. The code below can be used to convert the AlphaFill CIF file to a PDB file. We want to generate a PDB file because many tools for analyzing protein-ligand interactions, such as PLIP, work better with PDB-formatted files. We will use OpenBabel to convert the CIF file to PDB, and then use ProDy to edit the PDB file so it is compatible for PLIP-based analysis, but depending on which tools you intend to use, the PDB file might need to be modified in different ways. Download the ColabFold predicted structure of UGT72B27 [here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/UGT72B27.pdb). Submit the PDB file to the [AlphaFill webserver](https://alphafill.eu), select the UGT ligand only, and download the AlphaFill CIF file as shown in the image below.
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/UGT72B27.afill.jpg?raw=true){: width="500" }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/UGT72B27.afill.jpg?raw=true){: width="600" }
 
 ```
 from openbabel import openbabel
@@ -72,7 +72,48 @@ NOTE: AlphaFill does not guarantee that the transplanted ligand occupies the cor
 
 ## Transplanting cofactors
 
-In progress.
+In this case, we are going to use the AlphaFold2 predicted structure for the terpene synthase (TPS) `O81192`. The AlphaFill webserver can be used to transplant MG and MN metal cofactors from the experimental PDB structures, 1N1Z in this case. Because the AlphaFill database already analyzed the AF2 structures, we can just search for the `O81192` AF2 ID and download the AlphaFill CIF structure with the MG and MN cofactors (skipping POP in this case). The code below can be used to convert the AlphaFill CIF file to a PDB file that is compatible with PLIP for analyzing protein-ligand interactions, and probably many other tools. We will use OpenBabel to convert the CIF file to PDB, and then use ProDy to edit the PDB file so it is compatible for PLIP-based analysis, but depending on which tools you intend to use, the PDB file might need to be modified in different ways. Submit the AF2 ID to the [AlphaFill webserver](https://alphafill.eu), select the MG metal cofactors only (some TPS structures will have MN as well), and download the AlphaFill CIF file as shown in the image below.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/O81192.afill.jpg?raw=true){: width="500" }
+
+```
+from openbabel import openbabel
+import prody as pr
+
+# Convert the AlphaFill CIF file to a temporary PDB file using OpenBabel
+prot_id = "O81192"
+obConversion = openbabel.OBConversion()
+obConversion.SetInAndOutFormats("cif", "pdb")
+mol = openbabel.OBMol()
+obConversion.ReadFile(mol, '{}.afill.cif'.format(prot_id))
+obConversion.WriteFile(mol, '{}.afill.tmp.pdb'.format(prot_id))
+
+# Load PDB file using ProDy
+structure = pr.parsePDB('{}.afill.tmp.pdb'.format(prot_id))
+
+# Select protein and MG/MN atoms from the temp PDB structure
+structure = structure.select('protein or resname MG or resname MN')
+    
+# 1. Change the flag from ATOM to HETATM for MG/MN
+# 2. Change Chain ID to A for all co-factors
+# 3. Change the atom numbers to be above the last protein atom number
+max_res = structure.select('protein').getResindices().max() + 1
+for chain in structure.select('resname MG or resname MN'):
+    chain.setFlag("hetatm", 'hetatm')
+    chain.setChid("A")
+    chain.setElement(chain.getResname())
+    max_res += 1
+    chain.setResnum(max_res)
+
+# Save the modified structure as the final PDB file
+pr.writePDB('{}.afill.pdb'.format(af2_id), structure)
+```
+
+Now you can submit the modified AlphaFill PDB file (O81192.afill.pdb) to the [PLIP webserver](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index) to identify which protein residues interact with the different ligand atoms. As you can see in the image below, PLIP identified a total of 4 interactions between the 3 MG metal cofactors and the protein residues. In the `AlphaFill-Relax` section below, I show an example on how you can run a short molecular dynamics equilibration step to try to get an improved model with more interactions between the MG metal cofactors and the protein residues.  
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/files/O81192.afill.PLIP.jpg?raw=true)
+
+NOTE: AlphaFill does not guarantee that the transplanted ligand occupies the correct position and pose in the predicted structure, nor does it guarantee that it is an actual ligand for the predicted structure. The resulting AlphaFill structure and predicted interactions by PLIP should be carefully assessed.
 
 ## AlphaFill-Relax
 
