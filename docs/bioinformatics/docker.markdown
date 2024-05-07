@@ -42,14 +42,14 @@ AlphaFill can be used to transplant ligands from experimental structures to pred
 A Python Dash web-app that I built to explore the PanPPI data we generated using the maize pan-genomes, as explained in this [G3:Genes\|Genomes\|Genetics](https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkae059/7630293) paper. Currently there is only a Docker image for the Dash app with the maize data included, but I am planning to add a Docker image for running the analysis workflow for custom pan-genomes and custom data.
 
 [Docker Hub](https://hub.docker.com/r/externelly/panppi){: .btn .btn-purple }
-[GitHub Dockerfile](){: .btn .btn-blue }
+[GitHub Dockerfile](){: .btn .btn-blue  .disabled }
 
 ## PhylogenyZ
 
 An environment to run simple phylogenetic analyses, meant primarily for building protein trees. The general workflow I use is: (1) protein alignmnet using FAMSA, (2) alignment trimming using ClipKIT, and (3) building the phylogenetic tree using IQ-TREE2.
 
 [Docker Hub](https://hub.docker.com/r/externelly/phylogenyz){: .btn .btn-purple }
-[GitHub Dockerfile](){: .btn .btn-blue }
+[GitHub Dockerfile](){: .btn .btn-blue  .disabled }
 
 ## Chainsaw
 
@@ -57,3 +57,10 @@ An Docker image for running [Chainsaw](https://github.com/JudeWells/chainsaw), a
 
 [Docker Hub](https://hub.docker.com/r/externelly/chainsaw){: .btn .btn-purple }
 [GitHub Dockerfile](https://github.com/eporetsky/workflows/blob/main/Docker/Chainsaw/Dockerfile){: .btn .btn-blue }
+
+## Evolocity
+
+An Docker image for running [Evolocity](https://github.com/brianhie/evolocity), a Python package that calculates evolutionary velocity using protein languages. This Docker container comes with the default `esm1b_t33_650M_UR50S` and `esm1b_t33_650M_UR50S-contact-regression` pre-trained models downloaded so it takes a bit more space.
+
+[Docker Hub](https://hub.docker.com/repository/docker/externelly/evolocity/general){: .btn .btn-purple }
+[GitHub Dockerfile](){: .btn .btn-blue  .disabled }
