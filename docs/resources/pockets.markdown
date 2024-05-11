@@ -60,6 +60,17 @@ I created a Docker env for SiteFerret but I run into errors when trying to predi
 [Paper](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00799){: .btn .btn-purple }
 [GitHub](https://github.com/devalab/DeepPocket){: .btn .btn-blue }
 
+## PocketAnchor
+
+**PocketAnchor: Learning structure-based pocket representations for protein-ligand interaction prediction**
+
+[Paper](https://www.cell.com/cell-systems/abstract/S2405-4712(23)00149-7){: .btn .btn-purple }
+[GitHub](https://github.com/tiantz17/PocketAnchor){: .btn .btn-blue }
+[Docker](https://hub.docker.com/r/tiantz17/pocketanchor){: .btn .btn-green }
+
+PocketAnchor can be used for pocket detection using the PocketAnchor-site functionality, and for improving protein-ligand affinity prediction using the PocketAnchor-site functionality.
+
+
 # Pocket Comparison
 
 ## PPS-align
@@ -106,6 +117,12 @@ Dockerfile included in the GitHub repository.
 
 # Additional resources
 
+## Tutorials
+
+* [Enhanced Sampling of Binding Pocket Volume and Shape](https://molmod.dsf.unica.it/edes/)
+
+## To be sorted
+
 * [Pocket Similarity: Are α Carbons Enough?](https://pubs.acs.org/doi/10.1021/ci100210c)
 * [Estimating the Similarity between Protein Pockets](https://www.mdpi.com/1422-0067/23/20/12462)
 * [Protein-Ligand Interaction Clusters (PLIC)](https://academic.oup.com/database/article/doi/10.1093/database/bau029/2634082)
@@ -121,3 +138,4 @@ Dockerfile included in the GitHub repository.
 * [PocketPipe](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6599441/)
 * [CRAFT](https://github.com/PGlab-NIPER/CRAFT/)
 * [GrASP](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01698)
+

@@ -91,11 +91,29 @@ A collection of Colab notebooks, including some related to molecular docking.
 
 # Additional resources
 
+## Databases
+
+* [Ligand Expo](http://ligand-expo.rcsb.org/)
+
+## Visualizations
+
+* [P2RANK to Chimera](https://github.com/JavierSanchez-Utges/P2RANK_to_Chimera)
+
 ## Reviews
 
 * [The Art and Science of Molecular Docking](https://www.annualreviews.org/content/journals/10.1146/annurev-biochem-030222-120000)
 * [Structure-Based Drug Discovery with Deep Learning](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cbic.202200776?casa_token=oFYIbuG_I-YAAAAA%3AHr7AYBASZExKWWLLO0-z03ewE5jifnDzPC-N_yPYYKAiuhObuaOWPnsBQ3Xq2jbUAppJslnRPBY34sTo)
 
 ## Collections
+
 * [awesome-molecular-generation](https://github.com/amorehead/awesome-molecular-generation)
 * [awesome-molecular-docking](https://github.com/Thinklab-SJTU/awesome-molecular-docking)
+
+## Tutorials
+
+* [BioExcel Building Blocks workflows](https://mmb.irbbarcelona.org/biobb/workflows)
+
+## Useful
+
+* [How can I extract ligand with neighboring protein atoms from PDB with complex?](https://biology.stackexchange.com/questions/94983/how-can-i-extract-ligand-with-neighboring-protein-atoms-from-pdb-with-complex)
+* [MAXIT Suite](https://sw-tools.rcsb.org/apps/MAXIT/index.html)

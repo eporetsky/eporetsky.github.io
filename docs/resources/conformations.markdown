@@ -86,6 +86,15 @@ https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
 [Paper](https://elifesciences.org/articles/75751){: .btn .btn-purple }
 [GitHub](https://github.com/delalamo/af2_conformations){: .btn .btn-blue }
 
+# Trajectory Analysis
+
+## mRMSD
+
+**Analysis of Protein Folding Simulation with Moving Root Mean Square Deviation**
+
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01444){: .btn .btn-purple }
+[GitHub](https://github.com/omron-sinicx/mRMSD-paper-data){: .btn .btn-blue }
+
 # Additional resources
 
 * [Protein-ligand MD simulations](https://github.com/hgbrian/MD_protein_ligand) and on [Colab](https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/MD_protein_ligand.ipynb)
