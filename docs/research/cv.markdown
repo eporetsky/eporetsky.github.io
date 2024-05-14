@@ -10,7 +10,7 @@ has_toc: false
 
 ## CV
 
-PDF of updated version [(04.16.2024)](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv.pdf)
+PDF of updated version [(05.13.2024)](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv.pdf)
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/pdfs/eporetsky_cv_1.png?raw=true)
 
