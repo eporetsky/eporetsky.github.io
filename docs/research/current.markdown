@@ -18,7 +18,7 @@ has_toc: false
 
 ## Molecular docking and protein-ligand interactions
 
-Work in progress. You can find some relevant information in my [protein page](https://eporetsky.github.io/bioinformatics/proteins).
+This project is work in progress. In general, I am interested in applying molecular docking methods, such as DiffDock and DynamicBind, to predicted plant specialized metabolism enzymes, primarily terpene syntheses (TPSs). Part of this work has been to develop an easy to use bioinformatics infrastructure for high-throughput analysis and visualization of protein-ligand interactions. You can find some relevant information in my [protein-ligand page](https://eporetsky.github.io/bioinformatics/protein_ligand), with more additions to come in the future.
 
 ## PhosBoost
 

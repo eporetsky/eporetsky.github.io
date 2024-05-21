@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Proteins
-permalink: /bioinformatics/proteins
-nav_order: 3
+title: Protein-Ligand Interactions
+permalink: /bioinformatics/protein_ligand
+nav_order: 5
 parent: Bioinformatics
 has_toc: false
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Colab Notebooks
 permalink: /bioinformatics/colab
-nav_order: 2
+nav_order: 3
 parent: Bioinformatics
 has_toc: false
 ---
