@@ -18,35 +18,7 @@ Movements and confirmational changes within proteins are important for understan
 {:toc}
 </details>
 
-## ProDy
-
-A collection of tools for studying different aspects of protein dynamics. I am preparing a more detailed walkthrough, looking more closely at the structural dynamics of a crystal structure of terpene synthase (TPS). Updates will be included in the Bioinformatics tab.
-
-https://academic.oup.com/bioinformatics/article-abstract/27/11/1575/217006
-
-Instructions and documentation for the Python package: <br>
-http://prody.csb.pitt.edu
-
-## Making it rain
-
-User-friendly front-end for running molecular dynamics (MD) simulations.
-
-https://pubs.acs.org/doi/10.1021/acs.jcim.1c00998
-
-Different Google colab notebooks available: <br>
-https://github.com/pablo-arantes/making-it-rain
-
-## Molecular Dynamics on Cloud Computing
-
-Instructions for doing molecular dynamics on Google Compute Engine, AWS (Amazon Web Services), and other Cloud Computing services.
-
-Short blog post: <br>
-https://www.tanerkaragol.com/post/molecular-dynamics-on-google-compute-engine-aws-amazon-web-services-and-other-cloud-computing-se
-
-Instructions available at: <br>
-https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
-
-# Protein Conformation Prediction
+# Structure Prediction-based
 
 ## Subsampled AF2
 
@@ -86,6 +58,37 @@ https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
 [Paper](https://elifesciences.org/articles/75751){: .btn .btn-purple }
 [GitHub](https://github.com/delalamo/af2_conformations){: .btn .btn-blue }
 
+# Elastic Network Models-based
+
+## ProDy
+
+**ProDy: Protein Dynamics Inferred from Theory and Experiments**
+
+[Paper](https://academic.oup.com/bioinformatics/article-abstract/27/11/1575/217006){: .btn .btn-purple }
+[Website](http://prody.csb.pitt.edu){: .btn .btn-blue }
+
+A collection of tools for studying different aspects of protein dynamics.
+
+## ClustENMD
+
+**ClustENMD: efficient sampling of biomolecular conformational space at atomic resolution**
+
+[Paper](https://academic.oup.com/bioinformatics/article/37/21/3956/6317825){: .btn .btn-purple }
+[Website](http://prody.csb.pitt.edu/tutorials/clustenmd_tutorial/index.html){: .btn .btn-blue }
+
+Iterative sampling along Anisotropic Network Model (ANM) modes to for generating protein conformations with intermediate brief MD simulations. Part of the ProDy ecosystem.
+
+# Molecular Dynamics-based
+
+## Making it rain
+
+**Making it Rain: Cloud-Based Molecular Simulations for Everyone**
+
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00998){: .btn .btn-purple }
+[GitHub](https://github.com/pablo-arantes/making-it-rain){: .btn .btn-blue }
+
+User-friendly front-end for running molecular dynamics (MD) simulations with a variety of different Colab notebooks.
+
 # Trajectory Analysis
 
 ## mRMSD
@@ -99,3 +102,4 @@ https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing
 
 * [Protein-ligand MD simulations](https://github.com/hgbrian/MD_protein_ligand) and on [Colab](https://colab.research.google.com/github/hgbrian/biocolabs/blob/master/MD_protein_ligand.ipynb)
 * [Making a movie from an AMBER trajectory using VMD](https://amberhub.chpc.utah.edu/making-movies/)
+* [Molecular Dynamics on Cloud Computing](https://github.com/karagol-taner/Molecular-Dynamics-on-AWS-and-Cloud-Computing)
