@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Bioinformatics Apps
-permalink: /bioinformatics/apps
+title: PlantApp
+permalink: /apps/PlantApp
 nav_order: 1
-parent: Bioinformatics
+parent: apps
 has_toc: false
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Docker Images
-permalink: /bioinformatics/docker
+permalink: /workflows/docker
 nav_order: 2
-parent: Bioinformatics
+parent: workflows
 has_toc: false
 ---
 

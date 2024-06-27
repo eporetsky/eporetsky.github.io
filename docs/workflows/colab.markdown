@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Colab Notebooks
-permalink: /bioinformatics/colab
-nav_order: 3
-parent: Bioinformatics
+permalink: /workflows/colab
+nav_order: 1
+parent: workflows
 has_toc: false
 ---
 

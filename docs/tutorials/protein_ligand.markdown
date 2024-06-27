@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Protein-Ligand Interactions
-permalink: /bioinformatics/protein_ligand
-nav_order: 5
-parent: Bioinformatics
+permalink: /tutorials/protein_ligand
+nav_order: 2
+parent: Tutorials
 has_toc: false
 ---
 

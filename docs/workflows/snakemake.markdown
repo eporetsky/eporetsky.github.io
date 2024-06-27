@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Snakemake
-permalink: /bioinformatics/snakemake
-nav_order: 4
-parent: Bioinformatics
+permalink: /workflows/snakemake
+nav_order: 3
+parent: workflows
 has_toc: false
 ---
 

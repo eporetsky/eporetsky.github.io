@@ -4,8 +4,12 @@ title: Research
 permalink: /research/
 nav_order: 2
 has_children: true
-has_toc: false
+has_toc: true
 ---
+
+## General research interests
+
+Over the past decade, I have worked on diverse aspects of plant biology, genetics and bioinformatics analyses. Below is a sample of general research projects and questions that I often think about, with some relevant links. I describe my past research at UC San Diego and current research at the USDA in the Bay area in more details in the webpages found on the left.  
 
 <details open markdown="block">
   <summary>
@@ -15,10 +19,6 @@ has_toc: false
 1. TOC
 {:toc}
 </details>
-
-## General research interests
-
-Over the past decade, I have worked on diverse aspects of plant biology, genetics and bioinformatics analyses. Below is a sample of general research projects and questions that I often think about, with some relevant links. I describe my past research at UC San Diego and current research at the USDA in the Bay area in more details in the webpages found on the left.  
 
 ## Developing ML models with protein language models (PLMs) and predicted structures 
 

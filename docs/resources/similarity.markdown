@@ -45,5 +45,14 @@ Generally speaking, averaging protein embedding vectors over a whole protein can
 [GitHub](https://github.com/mesihk/prost){: .btn .btn-blue }
 [Webserver](https://mesihk.github.io/prost){: .btn .btn-green }
 
+## PLMSearch
+
+**PLMSearch: Protein language model powers accurate and fast sequence search for remote homology**
+
+[Paper](https://www.nature.com/articles/s41467-024-46808-5){: .btn .btn-purple }
+[GitHub](https://github.com/maovshao/PLMSearch/tree/main){: .btn .btn-blue }
+[PLMSearch](https://dmiip.sjtu.edu.cn/PLMSearch){: .btn .btn-green }
+[PLMAlign](https://dmiip.sjtu.edu.cn/PLMAlign){: .btn .btn-green }
+
 # Additional resources
 
