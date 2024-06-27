@@ -3,7 +3,7 @@ layout: page
 title: PlantApp
 permalink: /apps/mutrank
 nav_order: 2
-parent: apps
+parent: Apps
 has_toc: false
 ---
 

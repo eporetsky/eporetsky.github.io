@@ -3,7 +3,7 @@ layout: page
 title: SyntenyZ
 permalink: /apps/syntenyz
 nav_order: 3
-parent: apps
+parent: Apps
 has_toc: false
 ---
 

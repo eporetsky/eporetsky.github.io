@@ -3,7 +3,7 @@ layout: page
 title: Docker Images
 permalink: /workflows/docker
 nav_order: 2
-parent: workflows
+parent: Workflows
 has_toc: false
 ---
 

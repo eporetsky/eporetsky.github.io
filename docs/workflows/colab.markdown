@@ -3,7 +3,7 @@ layout: page
 title: Colab Notebooks
 permalink: /workflows/colab
 nav_order: 1
-parent: workflows
+parent: Workflows
 has_toc: false
 ---
 

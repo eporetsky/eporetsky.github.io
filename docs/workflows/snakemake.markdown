@@ -3,7 +3,7 @@ layout: page
 title: Snakemake
 permalink: /workflows/snakemake
 nav_order: 3
-parent: workflows
+parent: Workflows
 has_toc: false
 ---
 
