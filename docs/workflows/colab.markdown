@@ -40,3 +40,13 @@ A Colab notebook I prepared for predicting protein phosphorylation sites for a u
 A Colab notebook I prepared for running a brief 20ps Molecular Dynamics (MD) equilibration simulation step using OpenMM engine and AMBER force field. My very preliminary results show that it can improve the positioning of metal cofactors in terpene synthase active sites. Additional information can be found in the [bioinformatics/proteins](https://eporetsky.github.io/bioinformatics/proteins) page and inside the notebook.
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/animations/alphafill_relax_traj.gif?raw=true){: width="400" }
+
+## Relax Amber Batch
+
+<a target="_blank" href="https://colab.research.google.com/github/eporetsky/workflows/blob/main/Colab/relax_amber_batch.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+A Colab notebook I prepared for running the amber relaxation step recommended for predicted protein structures. This notebook is based completely on the `relax_amber` notebook that can be found at the [ColabFold](https://github.com/sokrypton/ColabFold) repository. The only addition offered here is the ability to batch-apply the PDB relaxation step to all PDB files in a given Google Drive folder.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/img_batch_relax.png?raw=true){: width="400" }
