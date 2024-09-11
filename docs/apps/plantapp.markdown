@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PlantApp
-permalink: /apps/PlantApp
+permalink: /apps/plantapp
 nav_order: 1
 parent: Apps
 has_toc: false

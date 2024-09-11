@@ -18,18 +18,40 @@ has_toc: false
 
 ---
 
-# Introduction to PlantApp
+# What is PlnatApp.org
 
-[GitHub](https://github.com/eporetsky/PlantApp){: .btn .btn-blue }
-[Webserver](https://www.plantapp.org){: .btn .btn-green }
+[PlantApp.org](https://www.plantapp.org){: .btn .btn-green }
 
-I started working on [www.plantapp.org](https://www.plantapp.org/) in 2021. My goal was to build a protein sequence-centric database (but not only) for comparative genomics in plants with an easy-to-use interface. As a starting point, I focused on the Phytozome primary protein sequences for individual plant genomes. You can find which datasets are currently on available on PlantApp through [this link](https://www.plantapp.org/SQNce/available_dbs/). I haven't spend much time since starting my SCINet Post-doc position at USDA in 2023, but I am happy to add more genomes and features, upon request. Feel free to reach out by email, Mastodon, LinkedIn, or open an issue on the [PlantApp GitHub page](https://github.com/eporetsky/PlantApp).
+I started working on [www.plantapp.org](https://www.plantapp.org/) in 2021. My goal was to build a protein sequence-centric database (but not only) for comparative genomics in plants with an easy-to-use interface. As a starting point, I focused on using the primary protein sequences that are curated by the JGI Phytozome plant genome database. I am in the process of updating the database to include an even more comprehensive set of protein annotations, gene familes, sequences, orthogroups, best-blast-hits and genomic coordiantes. You can find which datasets are currently on available on PlantApp through [this link](https://www.plantapp.org/SQNce/available_dbs/). 
 
-# The SQNce database
 
-I created a very simple SQLite database, named SQNce, to store all the data being used by PlantApp. The database can be parsed on the website. The current avaialble inforamtion includes protein annotations, sequences, orthogroups, best-blast-hits, genomic coordiantes, and some gene expression data.
+More recently, I have been putting together a large amount of re-analyzed transcriptomic data. Currently, there is CPM data for over 2,000 RNA-seq samples from 7 plant species. The data can be visualized through different interactive figures and the raw count and CPM data is available for downloadmore. 
 
-# PlantApp apps
+# Annotations
+
+The PlantApp database contains different types of protein annotations across multiple plant genomes. 
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_annotations_descriptions.png?raw=true){: width="600" }
+
+# Profiles
+
+## Gene expression plot
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_profiles_expression.png?raw=true){: width="600" }
+
+## Gene expression heatmap
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_profiles_heatmap.png?raw=true){: width="600" }
+
+## Mutual Rank-based coexpression
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_profiles_mutualrank.png?raw=true){: width="600" }
+
+# Apps
+
+More information about the different apps will be provided in the future through the following link:
+
+[App Details](https://eporetsky.github.io/apps/PlantApp){: .btn .btn-blue }
 
 ## SimpleTree
 
@@ -54,7 +76,6 @@ Build a simple genome graph showing the location of selected genes across the ge
 Run a quick and simple GO enrichment analysis from a list of selected gene IDs. Press the example button to see how it works.
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_goenrichment.jpg?raw=true){: width="600" }
-
 
 ## Mini-heatmaps
 
