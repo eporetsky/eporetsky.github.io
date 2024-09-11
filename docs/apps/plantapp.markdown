@@ -18,17 +18,36 @@ has_toc: false
 {:toc}
 </details>
 
-# PlantApp.org
+This section will contain the code and additional information about the apps in the future.
 
-[GitHub](https://github.com/eporetsky/PlantApp){: .btn .btn-blue }
-[Webserver](https://www.plantapp.org){: .btn .btn-green }
+[PlantApp.org](https://www.plantapp.org){: .btn .btn-green }
 
-PlantApp is Python Dash-based website that I started working on in 2021 with the goal of creating a protein sequence-centric database for comparative genomics in plants with an easy-to-use interface. I have included more detailed information in the [research/PlantApp page](https://eporetsky.github.io/research/plantapp), and you can follow the links below to the website and to the GitHub page were the code for the website is available.
+# SimpleTree
 
-## syntenyZ
+Build a simple protein-based phylogenetic tree from a list of gene IDs. Press the example button to see how it works.
 
-[GitHub](https://github.com/eporetsky/syntenyZ){: .btn .btn-blue }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_tree.jpg?raw=true){: width="600" }
 
-## blasTree
+# Protein Alignment
 
-[GitHub](https://github.com/eporetsky/blasTree){: .btn .btn-blue  .disabled }
+Generate a simple and interactive protein alignment from a list of selected gene IDs. The genome graph is generated using a Dash app. Press the example button to see how it works.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_alignment.jpg?raw=true){: width="600" }
+
+# Genome Graph
+
+Build a simple genome graph showing the location of selected genes across the genomes. The genome graph is generated using BioPython, and currently only supports Arabidopsis and Maize, although adding support to more genomes is simple. Press the example button to see how it works.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_genomegraph.jpg?raw=true){: width="600" }
+
+# GO Enrichment
+
+Run a quick and simple GO enrichment analysis from a list of selected gene IDs. Press the example button to see how it works.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/plantapp_goenrichment.jpg?raw=true){: width="600" }
+
+# Mini-heatmaps
+
+The mini-heatmaps plotting app was inspired by the gene pathway and gene family heatmap visualization produced by MapMan. This can be useful for visualizing quantitative changes in any group of genes. I used an sns heatmap and then added a rectangle to cover empty cells. Although it works fine, if I had the time, I would re-write to just draw the individual rectangle to make a cleaner figures. Press the "Copy example" button and paste the example data into the text box to get the mini-heatmap. Replacing numerical values with NaN will color the cells white.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/apps_plots_miniheatmap.png?raw=true){: width="600" }
