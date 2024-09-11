@@ -1,6 +1,6 @@
 ---
 layout: page
-title: PlantApp
+title: MutRank
 permalink: /apps/mutrank
 nav_order: 2
 parent: Apps

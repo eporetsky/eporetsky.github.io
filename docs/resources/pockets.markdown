@@ -120,6 +120,7 @@ Dockerfile included in the GitHub repository.
 ## Tutorials
 
 * [Enhanced Sampling of Binding Pocket Volume and Shape](https://molmod.dsf.unica.it/edes/)
+* [TeachOpenCADD: T014 · Binding site detection](https://projects.volkamerlab.org/teachopencadd/talktorials/T014_binding_site_detection.html)
 
 ## To be sorted
 
