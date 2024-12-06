@@ -2,7 +2,7 @@
 layout: page
 title: Transcriptomics
 permalink: /tutorials/transcriptomics
-nav_order: 1
+nav_order: 2
 parent: Tutorials
 has_toc: false
 ---

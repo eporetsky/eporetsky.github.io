@@ -2,7 +2,7 @@
 layout: page
 title: Protein Language Models
 permalink: /tutorials/plm
-nav_order: 3
+nav_order: 4
 parent: Tutorials
 has_toc: false
 ---
