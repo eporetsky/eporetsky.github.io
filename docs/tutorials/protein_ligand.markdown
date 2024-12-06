@@ -2,7 +2,7 @@
 layout: page
 title: Protein-Ligand Interactions
 permalink: /tutorials/protein_ligand
-nav_order: 2
+nav_order: 3
 parent: Tutorials
 has_toc: false
 ---
@@ -130,3 +130,32 @@ I am calling this approach AlphaFill-Relax, to borrow from the AlphaFold-Relax m
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/alphafill_relax.jpg?raw=true)
 
 As a note, I have only tested AlphaFill-Relax on metal cofactor ligands and have yet to test it on any other type of AlphaFill-transplanted ligands.
+
+# AutoDock-Vina
+
+[Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00203){: .btn .btn-purple }
+[GitHub](https://github.com/ccsb-scripps/AutoDock-Vina){: .btn .btn-blue }
+[Docs](https://autodock-vina.readthedocs.io/en/latest/){: .btn .btn-green }
+
+I have been experimenting with different ligand docking approaches, and AutoDock-Vina is one of the more established and popular methods. The is a moderate learning curve for getting together all the components, but the documentation has been helpful and easy to follow. I cannot guarantee that the information I provide below is accurate and that it follows the best practices for using Autodock-Vina, but it seems to work and, in most cases, the docking results are in line with what I expected. More sections will be added in the coming weeks.
+
+## Converting the PDBQT docking poses to SDF files
+
+While tools like ChimeraX are able to read PDBQT files, some tools require the docked ligand to come in an SDF file format. Assuming you have a `poses` folder containing the docking results in PDBQT format, the code below will extract all the docked poses into separate SDF files. Obabel must be available through your command line path.  
+
+```
+import os
+os.makedirs("tmp", exist_ok=True)
+os.makedirs("poses_sdf", exist_ok=True)
+
+for pdb_path in glob.glob(f"poses/*.pdbqt"):
+    pdbqt_id = os.path.basename(pdb_path).replace(".pdbqt", "")
+    
+    # Clean all the tmp files from the previous run
+    os.system("rm tmp/*")
+
+    # Obabel will extract all poses in the PDBQT file into separate SDF files
+    # Each SDF file will be numbered as poses_sdf/{pdbqt_id}_1..n.sdf
+    os.system(f"obabel {pdb_path} -O poses_sdf/{pdbqt_id}_.sdf -m > /dev/null 2>&1")
+```
+    
