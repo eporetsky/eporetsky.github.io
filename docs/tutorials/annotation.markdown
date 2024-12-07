@@ -55,3 +55,17 @@ mkdir output
 # Run your genome. Information about args can be found at: https://interproscan-docs.readthedocs.io/en/latest/HowToRun.html
 bash interproscan.sh -i clean/genomeID.fa --cpu 70 --output-dir output --formats TSV,GFF3 --iprlookup --goterms --pathways
 ```
+
+# LRRprofiler
+
+[Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9292849/){: .btn .btn-purple }
+[GitHub](https://github.com/ranwez/LRRprofiler){: .btn .btn-blue }
+[SIF](https://cloud.sylabs.io/library/cgottin/default/lrr_profiler/){: .btn .btn-green }
+
+LRRprofiler is a great tool for annotating plant leucine-rich repeat (LRR)-containing proteins.
+
+Singualrity has been replaced by Apptainer, which can be installed following the instructions [here](https://apptainer.org/docs/admin/main/installation.html#installation-on-linux). Once you have singularity installed, you will need to download the SIF file for the LRRprofiler (v0.2) from SyLabs, using this link [here](https://cloud.sylabs.io/library/cgottin/default/lrr_profiler). Then, to run LRRprofiler on a FASTA file containing protein sequences, you simply need to run:
+
+```
+apptainer run cgottin_default_lrr_profiler.sif --in_proteome proteins.fa --name prots
+```
