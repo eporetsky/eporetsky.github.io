@@ -1,0 +1,13 @@
+SampleID,Condition,Replicate,Factor,bamReads,Peaks,PeakCaller
+W18HA_0h_1,Control,1,WRKY18,bams_filtered/W18HA_0h_1.bam,reproduciblePeaks/W18HA_0h_1_reproducible_peaks.bed,narrow
+W18HA_0h_2,Control,2,WRKY18,bams_filtered/W18HA_0h_2.bam,reproduciblePeaks/W18HA_0h_2_reproducible_peaks.bed,narrow
+W18HA_2h_1,Treatment,1,WRKY18,bams_filtered/W18HA_2h_1.bam,reproduciblePeaks/W18HA_2h_1_reproducible_peaks.bed,narrow
+W18HA_2h_2,Treatment,2,WRKY18,bams_filtered/W18HA_2h_2.bam,reproduciblePeaks/W18HA_2h_2_reproducible_peaks.bed,narrow
+W33HA_0h_1,Control,1,WRKY33,bams_filtered/W33HA_0h_1.bam,reproduciblePeaks/W33HA_0h_1_reproducible_peaks.bed,narrow
+W33HA_0h_2,Control,2,WRKY33,bams_filtered/W33HA_0h_2.bam,reproduciblePeaks/W33HA_0h_2_reproducible_peaks.bed,narrow
+W33HA_2h_1,Treatment,1,WRKY33,bams_filtered/W33HA_2h_1.bam,reproduciblePeaks/W33HA_2h_1_reproducible_peaks.bed,narrow
+W33HA_2h_2,Treatment,2,WRKY33,bams_filtered/W33HA_2h_2.bam,reproduciblePeaks/W33HA_2h_2_reproducible_peaks.bed,narrow
+W40HA_0h_1,Control,1,WRKY40,bams_filtered/W40HA_0h_1.bam,reproduciblePeaks/W40HA_0h_1_reproducible_peaks.bed,narrow
+W40HA_0h_2,Control,2,WRKY40,bams_filtered/W40HA_0h_2.bam,reproduciblePeaks/W40HA_0h_2_reproducible_peaks.bed,narrow
+W40HA_2h_1,Treatment,1,WRKY40,bams_filtered/W40HA_2h_1.bam,reproduciblePeaks/W40HA_2h_1_reproducible_peaks.bed,narrow
+W40HA_2h_2,Treatment,2,WRKY40,bams_filtered/W40HA_2h_2.bam,reproduciblePeaks/W40HA_2h_2_reproducible_peaks.bed,narrow
