@@ -18,18 +18,11 @@ This section includes code for processing and analyzing different aspects of ChI
 {:toc}
 </details>
 
-# ChIP-seq analysis (Example: three plant WRKY TFs)
+# ChIP-seq analysis
 
 ## Introduction
 
-I have finally decided to embark on the journey of learning how to analyze ChIP-seq data. 
-One of the best ways to learn new bioinformatics skills is to reproduce results in scientific work that has already been published. 
-After going through a few dozen research articles, only in Arabidopsis for simplicitiy, I've settled on the [following article](https://pmc.ncbi.nlm.nih.gov/articles/PMC5304350/) 
-that has done ChIP-seq on WRKY transcription factors (TFs). In addition to having the mentioned ChIP-seq data, this article has a few
-other advantages: (i) it looks at three different WRKY TFs, (ii) it looks at the TF binding under control and Flg22-treated (plant immunity) 
-conditions, (iii) RNA-seq data under similar conditions is also available, (iv) there's a follow up study with looking at ChIP-seq and 
-RNA-seq in the triple knock-out WRKY mutant plants. While I’ve made an effort to ensure the accuracy of the analysis workflow presented here, 
-I am still in the process of learning and improving my approach. I welcome feedback and suggestions, and I will keep this page updated.
+I have finally decided to embark on the journey of learning how to analyze ChIP-seq data. One of the best ways to learn new bioinformatics skills is to reproduce results in scientific work that has already been published. After going through a few dozen research articles, only in Arabidopsis for simplicitiy, I've settled on the [following article](https://pmc.ncbi.nlm.nih.gov/articles/PMC5304350/) that has done ChIP-seq on WRKY transcription factors (TFs). In addition to having the mentioned ChIP-seq data, this article has a few other advantages: (i) it looks at three different WRKY TFs, (ii) it looks at the TF binding under control and Flg22-treated (plant immunity) conditions, (iii) RNA-seq data under similar conditions is also available, (iv) there's a follow up study with looking at ChIP-seq and RNA-seq in the triple knock-out WRKY mutant plants. While I’ve made an effort to ensure the accuracy of the analysis workflow presented here, I am still in the process of learning and improving my approach. I welcome feedback and suggestions, and I will keep this page updated.
 
 [Paper 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC5304350/){: .btn .btn-purple }
 [Paper 2](https://onlinelibrary.wiley.com/doi/10.1111/tpj.14043){: .btn .btn-purple }
