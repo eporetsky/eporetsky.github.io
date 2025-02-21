@@ -68,7 +68,7 @@ Next, run the command `conda env create -f environment.yml`. After it installs, 
 
 ### Creating the genome index files
 
-We are going to run an analysis on Arabidopsis RNA-seq data so we will need to build 
+We are going to run an analysis on Arabidopsis RNA-seq data so we will need to build the HISAT2 index file for the arabidopsis genome and make sure that we have a GTF file. 
 
 ```
 # Build hisat2 genome index for aligning
@@ -229,7 +229,6 @@ We can start the analysis by running the following commands:
 ```
 conda activate rnaseq
 mkdir ramdisk
-
 mkdir PRJNA339762
 mkdir PRJNA429781
 sudo mount -t tmpfs -o size=250000m tmpfs ramdisk # optional, but recommended
@@ -238,3 +237,393 @@ python workflow.rnaseq.py
 
 * Note that `/mount/ramdisk` is mounted as a tmpfs folder, which means that all intermediate files are written to the RAM memory and not to disk. The main reason I am using this is to reduce the amount of write-cycles, but it should also speed up the analysis because files are not written and read from the disk. This might not work if you do not have the proper permissions, so you might need remove the `--mount` process.
 * It is very important to run the MD5 checksum on the downloaded FASTQ files from ENA. Often times, especially for very large FASTQ files, the downloaded file does not match the provided MD5. Instead of throwing an error, you are still very likely to generate all the correct files but they are just going to be incomplete and there is no easy way to tell if the output was correctly analyzed or not. 
+
+# Removing batch effects
+
+## Introduction
+
+Batch effects are a common and often unavoidable challenge in RNA-seq experiments. These are systematic variations introduced by technical factors, such as differences in sample preparation, sequencing runs, or laboratory conditions, rather than biological differences of interest. Batch effects can obscure true biological signals and lead to incorrect or innacurate conclusions in downstream analyses. In this tutorial, we will explore methods to identify and correct batch effects in RNA-seq data, including visualization techniques for detecting batch. It’s worth noting that I want to note that this is my first attempt at addressing batch effects in RNA-seq data. In the past year I have processed over 20k RNA-seq samples from multiple plant species, tissues, and conditions, and I would like to put these data to better use. While I am still gaining experience in this area, I’ve found that there aren’t universally accepted guidelines or best practices for every scenario. This tutorial is based on widely used tools and techniques, and I encourage you to adapt these methods to fit the specific needs of your dataset and research goals.
+
+## Data preparation
+
+We are going to run two different methods for batch effect correction, `edgeR` and `ComBat-seq`. To make the results a little bit more comparable, we are going to use `edgeR` to filter genes by expression and convert counts to logCPM data. The script reads the individual count files located in the `AtCol-0/counts/` directory and uses the `rnaseq_sample_meta.tsv` to get sample annotations, including which experiment they belong to (`batch`), what tissue they belong to (`organ`), if the samples were treated in any way (`pertubation`), and treatment groups within each experiment (`group_order`). This is the main part, where we will process the samples and run the batch corrections, all in `R`.
+
+[edgeR](https://github.com/stephaniehicks/qsmooth){: .btn .btn-blue }
+[Tutorial](https://www.biostars.org/p/266507/){: .btn .btn-green }
+[Paper](https://academic.oup.com/biostatistics/article/19/2/185/3949169){: .btn .btn-blue }
+[ComBat-seq](https://github.com/zhangyuqing/ComBat-seq){: .btn .btn-blue }
+[Tutorial](https://rnabio.org/module-03-expression/0003/06/02/Batch-Correction/){: .btn .btn-green }
+[Paper](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519){: .btn .btn-blue }
+[General](https://academic.oup.com/biostatistics/article/17/1/29/1744261){: .btn .btn-blue }
+
+
+```
+# Load required libraries
+library(data.table)
+library(dplyr)
+library(sva)
+library(qsmooth)
+library(edgeR)
+
+# Set the paths to the count files and sample metadata
+counts_path <- "AtCol-0"
+batches_file <- "rnaseq_samples_meta.tsv"
+output_folder <- "AtCol-0"
+
+# Read the batches.tsv file
+batches <- fread(batches_file)
+batches <- data.frame(batches)
+
+# Initialize an empty data frame for counts
+df <- data.frame()
+
+# Get all file paths matching the pattern
+file_paths <- list.files(path = paste0(counts_path, "/counts/"), pattern = "*", full.names = TRUE)
+
+# Merge all the separate count files
+for (i in seq_along(file_paths)) {
+  file_path <- file_paths[i]
+  file_name <- tools::file_path_sans_ext(basename(file_path))  # Extract the batch name from the file name
+  file_name <- sub("\\.counts.tsv", "", file_name)
+  tmp <- fread(file_path)
+  
+  # Ensure the batch name exists in the batches file
+  if (!(file_name %in% batches$experiment_acc)) {
+    stop(paste("Batch", file_name, "not found in batches.tsv"))
+  }
+  
+  # Merge data frames by geneID
+  if (nrow(df) == 0) {
+    df <- tmp
+  } else {
+    df <- merge(df, tmp, by = "geneID", all = TRUE)
+  }
+}
+
+df <- data.frame(df)
+geneIDs <- df$geneID
+rownames(df) <- geneIDs
+df <- df[, -1]
+
+# Ensure all samples in the counts dataframe are in the batches.tsv file
+if (!all(colnames(df) %in% batches$sample_acc)) {
+  stop("Some samples in the counts data are not present in batches.tsv")
+}
+
+# Extract and reorder the batches file to match the column order of the counts dataframe
+batches <- batches[batches$sample_acc %in% colnames(df), ]
+batches <- batches[match(colnames(df), batches$sample_acc), ]
+
+# Create the design matrix with the individual experiments as batches
+batch <- as.factor(batches$experiment_acc)
+design <- model.matrix(~ batch)
+
+# We will use edgeR to process the data
+
+# Create a DGEList object
+y <- DGEList(counts = df)
+
+# Filter lowly expressed genes (optional, but recommended)
+keep <- filterByExpr(y, design)
+y <- y[keep, , keep.lib.sizes = FALSE]
+
+# Normalize library sizes
+y <- calcNormFactors(y)
+
+# Calculate log-transformed CPM
+logCPM_raw <- cpm(y, log = TRUE, prior.count = .5)
+
+# Save intermediate file: batch-corrected data
+write.table(data.frame("geneID" = rownames(logCPM_raw), logCPM_raw, check.names = FALSE), 
+            file = paste0(output_folder, "/AtCol-0.raw.logCPM.tsv"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+
+# Remove batch effects using the design matrix
+logCPM_edger <- removeBatchEffect(logCPM_raw, batch = batch)
+logCPM_edger <- data.frame(logCPM_edger)
+rownames(logCPM_edger) <- geneIDs[keep]
+
+# Save intermediate file: batch-corrected data
+write.table(data.frame("geneID" = rownames(logCPM_edger), logCPM_edger, check.names = FALSE), 
+            file = paste0(output_folder, "/AtCol-0.edgeR.logCPM.tsv"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+
+# Perform batch correction using ComBat-Seq on the count data after filtering for filterByExpr
+counts_combat <- ComBat_seq(as.matrix(df[keep,]), batch = batch)
+
+# Save intermediate file: batch-corrected data
+write.table(data.frame("geneID" = rownames(counts_combat), counts_combat, check.names = FALSE), 
+            file = paste0(output_folder, "/AtCol-0.CombatSeq.counts.tsv"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+
+# Use the batch corrected counts with edgeR
+y <- DGEList(counts = counts_combat)
+y <- y[keep, , keep.lib.sizes = FALSE]
+y <- calcNormFactors(y)
+logCPM_combat <- cpm(y, log = TRUE, prior.count = .5)
+
+# Save intermediate file: batch-corrected data
+write.table(data.frame("geneID" = rownames(logCPM_combat), logCPM_combat, check.names = FALSE), 
+            file = paste0(output_folder, "/AtCol-0.CombatSeq.logCPM.tsv"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+```
+
+## Measuring distances between samples
+
+Now that we have the logCPM data from uncorrected, edgeR-corrected, and ComBat-seq corrected, we can try to look at the distribution of distances between samples. To keep it simple, we are just going to look at the distribution between the control samples that comes from the same tissue, so they should be relatively similar to each other. The underlying hypothesis is that batch effects between experiments are going to dominate, leading to samples that come from the same batches are going to be more similar to each other and more distant to samples from other batches. Although the KDE plots shown below are not a definitive proof that this is indeed what we are observing, the bi- and multi-modal distributions observed for the uncorrected samples suggest that there is a strong batch effect present. The observed tentative batch effects are stronger for the leaf and root samples compared to the flower samples likely because there are many more batches of root and leaf samples and very few batches of flower samples. Intresetingly, the distribution of between-sample distances for the edgeR-corrected batches are inconsistent, producing a multi-modal distribution in the root samples and a uni-modal distribution in the leaf samples, while also being inconsistent in comparison to the distribution of the uncorrected samples. In contrast to the edgeR-corrected samples, the ComBat-seq corrected samples show much more consistent changes in the distributions, producing unimodal distributions that have, on average, higher between-sample distances compared to the uncorrected samples. These results are a good indication that ComBat-seq has been able to effectively remove the batch effects, so now the distances between samples are not dominated by the experiments that came from. Of course, to be able to make more difinitive arguments, we would have to dive deeper into the results.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/batch_kde.png?raw=true){: width="500" }
+
+```
+# Load necessary libraries
+library(ggplot2)
+library(reshape2)
+
+# Load your dataframes
+# Assuming the dataframes are named: logCPM_raw, logCPM_edger, logCPM_combat, and batches
+# Replace these with the actual file loading code if needed
+logCPM_raw <- read.table(paste0(output_folder, "/AtCol-0.edgeR.logCPM.raw.tsv"), sep = "\t", header=TRUE, row.names="geneID")
+logCPM_edger <- read.table(paste0(output_folder, "/AtCol-0.edgeR.logCPM.batch.tsv"), sep = "\t", header=TRUE, row.names="geneID")
+logCPM_combat <- read.table(paste0(output_folder, "/expression.CombatSeq.logCPM.tsv"), sep = "\t", header=TRUE, row.names="geneID")
+
+# Filter samples where organ == "Root" and perturbation == "None"
+filtered_samples <- batches[batches$organ == "Root" & batches$pertubation == "None",]$sample_acc
+
+# Subset the logCPM dataframes to include only the filtered samples
+logCPM_raw_filtered <- logCPM_raw[, colnames(logCPM_raw) %in% filtered_samples]
+logCPM_edger_filtered <- logCPM_edger[, colnames(logCPM_edger) %in% filtered_samples]
+logCPM_combat_filtered <- logCPM_combat[, colnames(logCPM_combat) %in% filtered_samples]
+
+# Calculate pairwise distances for each dataframe
+dist_raw <- as.matrix(dist(t(logCPM_raw_filtered)))
+dist_edger <- as.matrix(dist(t(logCPM_edger_filtered)))
+dist_combat <- as.matrix(dist(t(logCPM_combat_filtered)))
+
+# Convert distance matrices to long format for plotting
+dist_raw_long <- melt(dist_raw)
+dist_raw_long$method <- "Uncorrected"
+dist_edger_long <- melt(dist_edger)
+dist_edger_long$method <- "EdgeR"
+dist_combat_long <- melt(dist_combat)
+dist_combat_long$method <- "ComBat-Seq"
+
+# Combine all distance data into one dataframe
+distances <- rbind(dist_raw_long, dist_edger_long, dist_combat_long)
+# Remove self-comparisons (distance = 0)
+distances <- distances[distances$value != 0, ]
+
+# Plot KDE of distances
+ggplot(distances, aes(x = value, color = method, fill = method)) +
+  geom_density(alpha = 0.4) +
+  labs(
+    title = "Distribution of pairwise distances: Seed",
+    x = "Pairwise Distance",
+    y = "Density",
+    color = "Batch correction:",
+    fill = "Batch correction:"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_rect(fill = "white", color = NA),  # Set background to white
+    plot.background = element_rect(fill = "white", color = NA)    # Set plot area background to white
+  )
+
+ggsave("distribution_across_root.png", width = 5, height = 5, dpi = 300)
+```
+
+## Generating t-SNE plots
+
+One useful way to look at batch effects before and after being corrected is by visualizing the samples in a low dimensional space. We will use a popular method, t-SNE, that can be used to embed the high-dimensional sample data onto a lower space, a two-dimensional map in our case. In this case, the hypothesis is that in the uncorrected data, samples from the same batches will cluster more closely together than samples from the same tissue but from different clusters. After batch correction, samples that are more bioloficaly similar to each other should cluster more closely together, irregardless of the batch they belong to. Let's use all of our samples this time, and not just the control samples. When comparing the t-SNE plot for the uncorrected samples with t-SNE plots of the edgeR-corrected samples we can see that the edgeR-corrected samples are neither clustered by the experiment batch that they come from nor the tissue that they came from. This suggest that we weren't able to properly remove batch effects using edgeR, and that we probably removed important biological information on the way. When comparing the t-SNE plot for the uncorrected samples with t-SNE plots of the edgeR-corrected samples, we see more subtle changes. It is hard to see clear evidence for removal of batch effects, as the ComBat-seq samples still to seem to cluster based on the batches they came from, but there also seems to be more clustering based on the tissues they came from. In the future, we could try to reduce the `perplexity` parameter for t-SNE from 30 to 10 to make the 2d embedding mappings less tight, and check for more clear clustering patterns between samples. Additionaly, we could filter the the gene set analyzed to a smaller number, such as the top 1,000 genes with the highest variance, in case we are diluting the biological signal we are interested in by including most of the genes in the genomes. Either way, the t-SNE plot provides strong evidence that ComBat-seq is the preferable method for removing batch effects from RNA-seq data, at least for the way that we have done in.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/batch_tsne.png?raw=true){: width="500" }
+
+```
+# Load necessary libraries
+library(Rtsne)
+library(ggplot2)
+library(gridExtra)
+
+# Filter samples where organ == "Root" or "Leaf" and perturbation == "None"
+filtered_samples <- batches[batches$organ %in% c("Root", "Leaf", "Seedling", "Meristem", "Flower", "Seed", "Shoot", "Embryo"), ]
+unique(batches$organ)
+# Subset the logCPM dataframes to include only the filtered samples
+logCPM_raw_filtered <- logCPM_raw[, colnames(logCPM_raw) %in% filtered_samples$sample_acc]
+logCPM_edger_filtered <- logCPM_edger[, colnames(logCPM_edger) %in% filtered_samples$sample_acc]
+logCPM_combat_filtered <- logCPM_combat[, colnames(logCPM_combat) %in% filtered_samples$sample_acc]
+
+# Ensure the sample order matches between the data and annotations
+filtered_samples <- filtered_samples[filtered_samples$sample_acc %in% colnames(logCPM_raw_filtered), ]
+logCPM_raw_filtered <- logCPM_raw_filtered[, filtered_samples$sample_acc]
+logCPM_edger_filtered <- logCPM_edger_filtered[, filtered_samples$sample_acc]
+logCPM_combat_filtered <- logCPM_combat_filtered[, filtered_samples$sample_acc]
+
+# Perform t-SNE for each condition
+set.seed(42) # For reproducibility
+tsne_raw <- Rtsne(t(logCPM_raw_filtered), dims = 2, perplexity = 30, verbose = TRUE, max_iter = 500)
+tsne_edger <- Rtsne(t(logCPM_edger_filtered), dims = 2, perplexity = 30, verbose = TRUE, max_iter = 500)
+tsne_combat <- Rtsne(t(logCPM_combat_filtered), dims = 2, perplexity = 30, verbose = TRUE, max_iter = 500)
+
+# Create dataframes for plotting
+tsne_raw_df <- data.frame(
+  X = tsne_raw$Y[, 1],
+  Y = tsne_raw$Y[, 2],
+  Organ = filtered_samples$organ,
+  Batch = filtered_samples$experiment_acc
+)
+
+tsne_edger_df <- data.frame(
+  X = tsne_edger$Y[, 1],
+  Y = tsne_edger$Y[, 2],
+  Organ = filtered_samples$organ,
+  Batch = filtered_samples$experiment_acc
+)
+
+tsne_combat_df <- data.frame(
+  X = tsne_combat$Y[, 1],
+  Y = tsne_combat$Y[, 2],
+  Organ = filtered_samples$organ,
+  Batch = filtered_samples$experiment_acc
+)
+
+library(viridis)
+
+# Plot t-SNE for each condition
+plot_raw <- ggplot(tsne_raw_df, aes(x = X, y = Y, color = Organ)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "Uncorrected", x = "t-SNE 1", y = "t-SNE 2") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+  #scale_color_viridis_d(option = "viridis")  # Automatically assigns colors from the "magma" palette
+
+plot_edger <- ggplot(tsne_edger_df, aes(x = X, y = Y, color = Organ)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "EdgeR Corrected", x = "t-SNE 1", y = "") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+  #scale_color_viridis_d(option = "viridis")  # Automatically assigns colors from the "magma" palette
+
+plot_combat <- ggplot(tsne_combat_df, aes(x = X, y = Y, color = Organ)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "ComBat-Seq Corrected", x = "t-SNE 1", y = "") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+  #scale_color_viridis_d(option = "viridis")  # Automatically assigns colors from the "magma" palette
+
+# Combine the three plots into a single panel
+options(repr.plot.width = 30)  # Adjust the width (e.g., 15 inches)
+grid.arrange(plot_raw, plot_edger, plot_combat, ncol = 3)
+ggsave("tsne_plot_batch_tissue.png", grid.arrange(plot_raw, plot_edger, plot_combat, ncol = 3), width = 15, height = 5, dpi=600)
+
+# Plot t-SNE for each condition
+plot_raw <- ggplot(tsne_raw_df, aes(x = X, y = Y, color = Batch)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "t-SNE: Uncorrected", x = "t-SNE 1", y = "t-SNE 2") +
+  theme_minimal()
+plot_raw <- plot_raw + theme(legend.position = "none")
+
+plot_edger <- ggplot(tsne_edger_df, aes(x = X, y = Y, color = Batch)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "t-SNE: edgeR Corrected", x = "t-SNE 1", y = "t-SNE 2") +
+  theme_minimal()
+plot_edger <- plot_edger + theme(legend.position = "none")
+
+plot_combat <- ggplot(tsne_combat_df, aes(x = X, y = Y, color = Batch)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "t-SNE: ComBat-Seq Corrected", x = "t-SNE 1", y = "t-SNE 2") +
+  theme_minimal()
+plot_combat <- plot_combat + theme(legend.position = "none")
+
+# Combine the three plots into a single panel
+options(repr.plot.width = 30)  # Adjust the width (e.g., 15 inches)
+grid.arrange(plot_raw, plot_edger, plot_combat, ncol = 3)
+ggsave("tsne_plot_batches.png", grid.arrange(plot_raw, plot_edger, plot_combat, ncol = 3), width = 15, height = 5, dpi = 600)
+?ggsave
+# Function to remove zero-variance columns
+remove_zero_variance <- function(data) {
+  data[, apply(data, 2, var) > 0]  # Keep only columns with variance > 0
+}
+
+# Remove zero-variance columns from the datasets
+logCPM_raw_filtered <- remove_zero_variance(logCPM_raw_filtered)
+logCPM_edger_filtered <- remove_zero_variance(logCPM_edger_filtered)
+logCPM_combat_filtered <- remove_zero_variance(logCPM_combat_filtered)
+
+# Perform PCA for each condition
+pca_raw <- prcomp(t(logCPM_raw_filtered), center = TRUE, scale. = TRUE)
+pca_edger <- prcomp(t(logCPM_edger_filtered), center = TRUE, scale. = TRUE)
+pca_combat <- prcomp(t(logCPM_combat_filtered), center = TRUE, scale. = TRUE)
+
+# Create dataframes for plotting
+pca_raw_df <- data.frame(
+  PC1 = pca_raw$x[, 1],
+  PC2 = pca_raw$x[, 2],
+  Organ = filtered_samples$organ
+)
+
+pca_edger_df <- data.frame(
+  PC1 = pca_edger$x[, 1],
+  PC2 = pca_edger$x[, 2],
+  Organ = filtered_samples$organ
+)
+
+pca_combat_df <- data.frame(
+  PC1 = pca_combat$x[, 1],
+  PC2 = pca_combat$x[, 2],
+  Organ = filtered_samples$organ
+)
+
+# Plot PCA for each condition
+plot_raw_pca <- ggplot(pca_raw_df, aes(x = PC1, y = PC2, color = Organ)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "PCA: Uncorrected", x = "PC1", y = "PC2") +
+  theme_classic()
+
+plot_edger_pca <- ggplot(pca_edger_df, aes(x = PC1, y = PC2, color = Organ)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "PCA: edgeR Corrected", x = "PC1", y = "PC2") +
+  theme_classic()
+
+plot_combat_pca <- ggplot(pca_combat_df, aes(x = PC1, y = PC2, color = Organ)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(title = "PCA: ComBat-Seq Corrected", x = "PC1", y = "PC2") +
+  theme_classic()
+
+# Combine the three plots into a single panel
+options(repr.plot.width = 15)  # Make the plot wider
+grid.arrange(plot_raw_pca, plot_edger_pca, plot_combat_pca, ncol = 3)
+```
+
+## qsmooth
+
+I am not currently planning on using `qsmooth`, but I thought I would still leave this hese. The `qsmooth` R package can be used to adjust for within group variations by computing a weight at every quantile that compares the variability between groups relative to within groups. In one extreme, quantile normalization is applied and in the other extreme quantile normalization within each biological condition is applied. My understanding is that it could be a useful method to adjust for some of the within-group variance and retain more biologically relevant information for biological replicates. 
+
+[qsmooth](https://github.com/stephaniehicks/qsmooth){: .btn .btn-blue }
+[Tutorial](https://bioconductor.org/packages/release/bioc/vignettes/qsmooth/inst/doc/qsmooth.html){: .btn .btn-green }
+[Paper](https://academic.oup.com/biostatistics/article/19/2/185/3949169){: .btn .btn-blue }
+
+```
+group <- as.factor(paste(batches$experiment_acc, batches$group_order, sep = "_"))
+
+qlogCPM_raw <- qsmooth(object = logCPM_raw, group_factor = group)
+qlogCPM_edger <- qsmooth(object = logCPM_edger, group_factor = group)
+qlogCPM_combat <- qsmooth(object = logCPM_combat, group_factor = group)
+
+# Filter samples where organ == "Root" and perturbation == "None"
+filtered_samples <- batches[batches$organ == "Root" & batches$pertubation == "None",]$sample_acc
+
+# Subset the logCPM dataframes to include only the filtered samples
+qsmooth_raw_filtered <- qlogCPM_raw@qsmoothData[, colnames(qlogCPM_raw@qsmoothData) %in% filtered_samples]
+qsmooth_edger_filtered <- qlogCPM_edger@qsmoothData[, colnames(qlogCPM_edger@qsmoothData) %in% filtered_samples]
+qsmooth_combat_filtered <- qlogCPM_combat@qsmoothData[, colnames(qlogCPM_combat@qsmoothData) %in% filtered_samples]
+```
