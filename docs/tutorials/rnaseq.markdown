@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RNA-seq
+title: RNA-seq Analysis
 permalink: /tutorials/rnaseq
 nav_order: 2
 parent: Tutorials
@@ -368,7 +368,7 @@ write.table(data.frame("geneID" = rownames(logCPM_combat), logCPM_combat, check.
 
 Now that we have the logCPM data from uncorrected, edgeR-corrected, and ComBat-seq corrected, we can try to look at the distribution of distances between samples. To keep it simple, we are just going to look at the distribution between the control samples that comes from the same tissue, so they should be relatively similar to each other. The underlying hypothesis is that batch effects between experiments are going to dominate, leading to samples that come from the same batches are going to be more similar to each other and more distant to samples from other batches. Although the KDE plots shown below are not a definitive proof that this is indeed what we are observing, the bi- and multi-modal distributions observed for the uncorrected samples suggest that there is a strong batch effect present. The observed tentative batch effects are stronger for the leaf and root samples compared to the flower samples likely because there are many more batches of root and leaf samples and very few batches of flower samples. Intresetingly, the distribution of between-sample distances for the edgeR-corrected batches are inconsistent, producing a multi-modal distribution in the root samples and a uni-modal distribution in the leaf samples, while also being inconsistent in comparison to the distribution of the uncorrected samples. In contrast to the edgeR-corrected samples, the ComBat-seq corrected samples show much more consistent changes in the distributions, producing unimodal distributions that have, on average, higher between-sample distances compared to the uncorrected samples. These results are a good indication that ComBat-seq has been able to effectively remove the batch effects, so now the distances between samples are not dominated by the experiments that came from. Of course, to be able to make more difinitive arguments, we would have to dive deeper into the results.
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/batch_kde.png?raw=true){: width="500" }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/batch_kde.png?raw=true){: width="800" }
 
 ```
 # Load necessary libraries
@@ -434,7 +434,7 @@ ggsave("distribution_across_root.png", width = 5, height = 5, dpi = 300)
 
 One useful way to look at batch effects before and after being corrected is by visualizing the samples in a low dimensional space. We will use a popular method, t-SNE, that can be used to embed the high-dimensional sample data onto a lower space, a two-dimensional map in our case. In this case, the hypothesis is that in the uncorrected data, samples from the same batches will cluster more closely together than samples from the same tissue but from different clusters. After batch correction, samples that are more bioloficaly similar to each other should cluster more closely together, irregardless of the batch they belong to. Let's use all of our samples this time, and not just the control samples. When comparing the t-SNE plot for the uncorrected samples with t-SNE plots of the edgeR-corrected samples we can see that the edgeR-corrected samples are neither clustered by the experiment batch that they come from nor the tissue that they came from. This suggest that we weren't able to properly remove batch effects using edgeR, and that we probably removed important biological information on the way. When comparing the t-SNE plot for the uncorrected samples with t-SNE plots of the edgeR-corrected samples, we see more subtle changes. It is hard to see clear evidence for removal of batch effects, as the ComBat-seq samples still to seem to cluster based on the batches they came from, but there also seems to be more clustering based on the tissues they came from. In the future, we could try to reduce the `perplexity` parameter for t-SNE from 30 to 10 to make the 2d embedding mappings less tight, and check for more clear clustering patterns between samples. Additionaly, we could filter the the gene set analyzed to a smaller number, such as the top 1,000 genes with the highest variance, in case we are diluting the biological signal we are interested in by including most of the genes in the genomes. Either way, the t-SNE plot provides strong evidence that ComBat-seq is the preferable method for removing batch effects from RNA-seq data, at least for the way that we have done in.
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/batch_tsne.png?raw=true){: width="500" }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/batch_tsne.png?raw=true){: width="800" }
 
 ```
 # Load necessary libraries

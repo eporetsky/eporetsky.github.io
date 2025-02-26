@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Protein-Ligand Interactions
-permalink: /tutorials/protein_ligand
+title: Protein Structures
+permalink: /tutorials/protein_structures
 nav_order: 4
 parent: Tutorials
 has_toc: false
@@ -18,4 +18,5 @@ This section includes code for processing and analyzing different aspects of pro
 {:toc}
 </details>
 
+TODO
 

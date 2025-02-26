@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ChIP-seq
+title: ChIP-seq Analysis
 permalink: /tutorials/chipseq
 nav_order: 3
 parent: Tutorials
@@ -38,8 +38,11 @@ There are a lot of tutorials and guidelines on ChIP-seq analysis. I'll leave a f
 
 ### Brief introduction
 
+TODO
+
 ### Project structure
 
+'''
 project/
 ├── bams/
 │   ├── 
@@ -61,6 +64,7 @@ project/
 ├── reproduciblePeaks/
 │   └── 
 └── ...
+'''
 
 ### Aligning raw reads to the genome
 
@@ -166,7 +170,7 @@ control is more representative of the true background. If input samples are not 
 (e.g., same tissue, same preparation method, same sequencing depth), pooling them together is likely to improve peak calling and reduce 
 variability, at a small price of reducing the validitiy of the statistical inference results.
 
-## 2. Handling replicates using the Irreproducibility Discovery Rate (IDR)
+## Handling replicates using the Irreproducibility Discovery Rate (IDR)
 
 ### Brief introduction
 
@@ -195,13 +199,13 @@ idr --samples MACS3/W18HA_0h_1_peaks.narrowPeak MACS3/W18HA_0h_2_peaks.narrowPea
 ### Extracting reproducible peaks
 
 After running IDR, we now have some statistics about how reproducible are the peaks for each condition. We can use this information to 
-extract the peaks that pass the `FDR p-value < 0.05` by running the command `bash idr.get.peaks.sh` that you can download from [here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/idr.get.peaks.sh?raw=true)
+extract the peaks that pass the `FDR p-value < 0.05` by running the command `bash idr.get.peaks.sh` that you can download from [here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/idr.get.peaks.sh)
 
 ### Results
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/img.W18HA_2h.png?raw=true){: width="500" }
 
-## 3. Comparing binding sites between different conditions using DiffBind
+## Comparing binding sites between different conditions using DiffBind
 
 ### Short introduction
 
@@ -238,6 +242,12 @@ W40HA_2h_2,Treatment,2,WRKY40,bams_filtered/W40HA_2h_2.bam,reproduciblePeaks/W40
 
 ### Running DiffBind
 
+We are going to use DiffBind in two different way. First, we are going to use the complete sample sheet to make a PCA plot and a clustered heatmap to see how similar the different samples are compared to each other. Second, we are going to treat the data from each TF seperately and use DESeq2 and edgeR to get a list of differentially occuring binding sites for each TF that we can use for downstream processing. Let's start from the first part, with the code being available after the figures. We can quickly discern that there is some variability in the peaks we extracted between the different samples. While this could be bona fide biological variability, it might be still be worth to go back and check if we have made a mistake at any of the steps above. Assuming we haven't done any mistakes, what we can see based from the PCA plot is that is that the WRLY33 and WRKY40 treatment vs control samples are better separated on the PC1 than the WRKY18 samples, where one of the control samples seems to be more similar to the treated samples. This is likely to post a problem when we will use DiffBind to conduct statistical testing. Having worked with plants and TFs, I can hypothesize that either some stress conditions, such as wounding, or aberrant transgene expression can lead to unexpected activation of TFs. This should be a reminder to us that, while the use of two biological replicates in many ChIP-seq experiments is prevalent, ChIP-seq experiments can be variable, even more variable than bulk RNA-seq, and that more biological replicates should be used (or, when constrained for resources, pooled samples from different plants). The clustered heatmap is telling us a similar story, although in this case, both WRKY18 control samples are clustered more closely together, and are more similar to the WRKY18 and WRKY40 treated samples than the treated WRKY33 samples.
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/img.DiffBind.PCA.png?raw=true){: width="800" }
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/img.DiffBind.heatmap.png?raw=true){: width="800" }
+
 ```
 library(DiffBind)
 
@@ -247,38 +257,80 @@ samples <- read.csv("sample_sheet.csv")
 # Create a DiffBind object
 dba_obj <- dba(sampleSheet = samples)
 
+
 # Plot a PCA to visualize sample clustering
 dba.plotPCA(dba_obj, label = DBA_CONDITION)
 
-# Perform binding affinity analysis for Control vs. Treatment
-contrast <- dba.contrast(dba_obj, group1 = dba_obj$masks$Control, group2 = dba_obj$masks$Treatment)
-dba_obj <- dba.analyze(contrast)
-
-# Retrieve differentially bound sites
-diff_sites <- dba.report(dba_obj)
-
-# Save differential binding results to a file
-write.csv(as.data.frame(diff_sites), "diffbind_control_vs_treatment.csv")
-
-# Subset for treatment condition only and compare TFs
-treatment_mask <- dba_obj$masks$Treatment
-treatment_obj <- dba(dba_obj, mask = treatment_mask)
-
-# Perform a three-way contrast for TF comparison under treatment
-tf_contrast <- dba.contrast(treatment_obj, categories = DBA_FACTOR)
-treatment_obj <- dba.analyze(tf_contrast)
-
-# Retrieve TF-specific differential binding
-tf_diff_sites <- dba.report(treatment_obj)
-write.csv(as.data.frame(tf_diff_sites), "diffbind_tf_comparison_treatment.csv")
-
-# Visualize results with a PCA for TFs under treatment
-dba.plotPCA(treatment_obj, label = DBA_FACTOR)
+# Plot correlation heatmap
+dba.plotHeatmap(dba_obj, ColAttributes = DBA_CONDITION)
 ```
 
-### Results
+For the second step we are just going to compare each TF separately between the treated and control conditions. We could use DiffBind to build a different or more complex design matrix, but we will skip it for the time being. We will also edit the data loaded from the sample sheet and set the `Factor` column to be the `Condition` column, while remove the data from the original `Factor` column. This way, we are left with information about the biological replicates and treatment when we loop over the unique TFs. For a later stage, when we will use MEME-ChIP for binding motif discovery, it is important to set the `summits` variable to a constant values (50) in the `dba.count` so the the peaks are re-centered and a so all peak ranges are the same size (2*50bp, in this case). As mentioned on the [MEME-ChIP website](https://meme-suite.org/meme/doc/meme-chip.html?man_type=web): ` Ideally the sequences should be all the same length, between 100 and 500 base-pairs long and centrally enriched for motifs. The immediate regions around individual ChIP-seq "peaks" from a transcription factor (TF) ChIP-seq experiment are ideal. The suggested 100 base-pair minimum size is based on the typical resolution of ChIP-seq peaks but it is useful to have more of the surrounding sequence to give CentriMo the power to tell if a motif is centrally enriched.`.
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/img.DiffBind.PCA.png?raw=true){: width="500" }
+```
+# Create a DiffBind object
+dba_obj <- dba(sampleSheet = samples)
+
+# List of transcription factors from the sample sheet
+factors <- unique(samples$Factor)
+
+# Loop through each transcription factor
+for (factor in factors) {
+  cat("Processing factor:", factor, "\n")
+  
+  # Subset the sample sheet for the current factor
+  factor_samples <- samples[samples$Factor == factor, ]
+
+  # Remove the Factor column and rename Condition to Factor
+  factor_samples$Factor <- NULL
+  colnames(factor_samples)[colnames(factor_samples) == "Condition"] <- "Factor"
+  
+  # Create a new DBA object for the current factor
+  dba_obj <- dba(sampleSheet = factor_samples)
+  
+  # Count reads in binding sites
+  dba_obj <- dba.count(dba_obj, summits = 50) # Set summits=TRUE if you want to re-center peaks
+  
+  # Define contrasts (untreated vs. treated)
+  dba_obj <- dba.contrast(dba_obj, categories=DBA_FACTOR, minMembers = 2)
+  
+  # Perform differential analysis
+  dba_obj <- dba.analyze(dba_obj, method = DBA_EDGER, bGreylist = FALSE, bBlacklist = FALSE) # DBA_DESEQ2,DBA_EDGER
+  
+  # Generate a report with significant sites (FDR < 0.05)
+  dba_report <- dba.report(dba_obj, method = DBA_EDGER, th = 0.05, bUsePval = FALSE, DataType = DBA_DATA_GRANGES)
+  
+  # Export the report as a BED file
+  output_bed <- paste0(factor, "_differential_binding_sites.bed")
+  rtracklayer::export(dba_report, con = output_bed, format = "BED")
+  
+  cat("BED file for", factor, "saved to", output_bed, "\n")
+}
+```
+
+## MEME-ChIP
+
+MEME-ChIP seems to be a popular tool for motif analysis and discovery, which is something of interest when analyzing ChIP-seq data. I wrote a Python script to extract the sequences of the peaks from the genome file because I didn't want to use GRanges, which is the standard method. This way, after we get the BED files containing the coordinates for the DiffBind differential binding sites, we can generate the FASTA files by calling the `diffbind2fasta.py` script, that can be found on my [bio-informatics GitHub repo](https://github.com/eporetsky/bioinformatics-repo/tree/master/ChiP-seq). I should note that I didn't want to use GRanges because I just wanted to use my own genome FASTA file, and, as far as I can tell, adding custom genomes to GRanges is not straightforward. That said, until this is tested, I cannot guarantee that my script produces the same FASTA file as GRanges.
+
+```
+python diffbind2fasta.py -b WRKY18_differential_binding_sites.bed -f AtCol-0.fa -o WRKY18_differential_binding_sites.fa
+python diffbind2fasta.py -b WRKY33_differential_binding_sites.bed -f AtCol-0.fa -o WRKY33_differential_binding_sites.fa
+python diffbind2fasta.py -b WRKY40_differential_binding_sites.bed -f AtCol-0.fa -o WRKY40_differential_binding_sites.fa
+```
+
+And now we can run MEME-ChIP from the command-line or from their [website](https://meme-suite.org/meme/doc/meme-chip.html?man_type=web): 
+
+```
+meme-chip -oc WRKY18 WRKY18_differential_binding_sites.fa
+meme-chip -oc WRKY18 WRKY33_differential_binding_sites.fa
+meme-chip -oc WRKY18 WRKY40_differential_binding_sites.fa
+```
+
+As you can see from the results, we have detected the (T)TGAC(C/T) [W-box](https://en.wikipedia.org/wiki/W-box) binding motif for WRKY33 and WRKY40, but not for WRKY18. Although we have not looked at the actual DiffBind differential binding results yet, we anticipated not getting strong statistical signal for WRKY18, which is likely to be the reason for why we haven't detected the W-box binding motif. We will likely find the W-box binding motif if we just extract the the centered peaks without conducting the DiffBind analysis, as done in the paper. Interestingly, we did detect a somewhat modified (T)TGA(C/A)(C/T) W-box binding motif for WRKY33 that was not reported in the paper but could be interesting to follow up on. 
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/img.MEME.motifs.png?raw=true){: width="500" }
+
+I have also uploaded the MEME outputs for the three WRKY TFs [here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/MEME.WRKYs.zip) for further exploration. We can look at a few additional motifs that have been found by STREME, by pressing the `STREME` button in the HTML file. Additional details on how to interpret these results can be found [here](https://meme-suite.org/meme/doc/streme.html).
 
 ## ChIPseeker
 
