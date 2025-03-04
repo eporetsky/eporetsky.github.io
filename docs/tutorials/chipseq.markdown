@@ -33,7 +33,6 @@ There are a lot of tutorials and guidelines on ChIP-seq analysis. I'll leave a f
 3. [Training](https://github.com/dagousket/chip_seq_training)
 4. [Galaxy tutorial](https://shaunmahony.github.io/chip-seq-tutorial/)
 
-
 ## Data preparation
 
 ### Brief introduction
@@ -42,29 +41,28 @@ TODO
 
 ### Project structure
 
-'''
-project/
-├── bams/
+```
+├── bams
 │   ├── 
 │   ├── 
 │   ├── 
-├── bams_filtered/
+├── bams_filtered
 │   ├── 
 │   ├── 
 │   ├── 
-├── IDR/
+├── IDR
 │   ├── W18HA_0h.idr.log
 │   ├── W18HA_0h-idr
 │   ├── W18HA_0h-idr.png
 │   ├── ...
-├── MACS3/
+├── MACS3
 │   ├── W18HA_0h_1_peaks.narrowPeak
 │   ├── W18HA_0h_2_peaks.narrowPeak
 │   ├── ...
-├── reproduciblePeaks/
+├── reproduciblePeaks
 │   └── 
 └── ...
-'''
+```
 
 ### Aligning raw reads to the genome
 

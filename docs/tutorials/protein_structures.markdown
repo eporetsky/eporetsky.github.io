@@ -2,7 +2,7 @@
 layout: page
 title: Protein Structures
 permalink: /tutorials/protein_structures
-nav_order: 4
+nav_order: 5
 parent: Tutorials
 has_toc: false
 ---

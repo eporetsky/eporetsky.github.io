@@ -1,0 +1,290 @@
+Pfam accn	Pfam name	Pfam description	Notes	present in SM pathways in AraCyc?	present in other biosynthetic metacyc pathways?	present in nonbiosynthetic metacyc pathways?
+PF00005.24	ABC_tran	ABC transporter	In SM biosynthetic metacyc pathway		yes	yes
+PF00017.21	SH2	SH2 domain	In SM biosynthetic metacyc pathway		yes	yes
+PF00018.25	SH3_1	SH3 domain	In SM biosynthetic metacyc pathway		yes	
+PF00067.19	p450	Cytochrome P450	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00106.22	adh_short	short chain dehydrogenase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00107.23	ADH_zinc_N	Zinc-binding dehydrogenase	In SM biosynthetic metacyc pathway		yes	yes
+PF00108.20	Thiolase_N	"Thiolase, N-terminal domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00109.23	ketoacyl-synt	"Beta-ketoacyl synthase, N-terminal domain"	In SM biosynthetic metacyc pathway		yes	
+PF00117.25	GATase	Glutamine amidotransferase class-I	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00118.21	Cpn60_TCP1	TCP-1/cpn60 chaperonin family	In SM biosynthetic metacyc pathway			
+PF00144.21	Beta-lactamase	Beta-lactamase	In SM biosynthetic metacyc pathway		yes	
+PF00156.24	Pribosyltran	Phosphoribosyl transferase domain	In SM biosynthetic metacyc pathway		yes	
+PF00168.27	C2	C2 domain	In SM biosynthetic metacyc pathway		yes	yes
+PF00171.19	Aldedh	Aldehyde dehydrogenase family	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00185.21	OTCace	"Aspartate/ornithine carbamoyltransferase, Asp/Orn binding domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF00195.16	Chal_sti_synt_N	"Chalcone and stilbene synthases, N-terminal domain"	In SM biosynthetic metacyc pathway	yes	yes	
+PF00201.15	UDPGT	UDP-glucoronosyl and UDP-glucosyl transferase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00202.18	Aminotran_3	Aminotransferase class-III	In SM biosynthetic metacyc pathway		yes	yes
+PF00221.16	Lyase_aromatic	Aromatic amino acid lyase	In SM biosynthetic metacyc pathway	yes	yes	
+PF00232.15	Glyco_hydro_1	Glycosyl hydrolase family 1	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00248.18	Aldo_ket_red	Aldo/keto reductase family	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00264.17	Tyrosinase	Common central domain of tyrosinase	In SM biosynthetic metacyc pathway		yes	
+PF00278.19	Orn_DAP_Arg_deC	"Pyridoxal-dependent decarboxylase, C-terminal sheet domain"	In SM biosynthetic metacyc pathway		yes	
+PF00282.16	Pyridoxal_deC	Pyridoxal-dependent decarboxylase conserved domain	In SM biosynthetic metacyc pathway		yes	yes
+PF00288.23	GHMP_kinases_N	GHMP kinases N terminal domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00289.19	Biotin_carb_N	"Biotin carboxylase, N-terminal domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF00290.17	Trp_syntA	Tryptophan synthase alpha chain	In SM biosynthetic metacyc pathway			
+PF00291.22	PALP	Pyridoxal-phosphate dependent enzyme	In SM biosynthetic metacyc pathway		yes	yes
+PF00293.25	NUDIX	NUDIX domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00303.16	Thymidylat_synt	Thymidylate synthase	In SM biosynthetic metacyc pathway		yes	
+PF00305.16	Lipoxygenase	Lipoxygenase	In SM biosynthetic metacyc pathway	yes	yes	
+PF00328.19	His_Phos_2	Histidine phosphatase superfamily (branch 2)	In SM biosynthetic metacyc pathway		yes	
+PF00348.14	polyprenyl_synt	Polyprenyl synthetase	In SM biosynthetic metacyc pathway		yes	yes
+PF00368.15	HMG-CoA_red	Hydroxymethylglutaryl-coenzyme A reductase	In SM biosynthetic metacyc pathway	yes	yes	
+PF00378.17	ECH_1	Enoyl-CoA hydratase/isomerase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00387.16	PI-PLC-Y	"Phosphatidylinositol-specific phospholipase C, Y domain"	In SM biosynthetic metacyc pathway		yes	
+PF00388.16	PI-PLC-X	"Phosphatidylinositol-specific phospholipase C, X domain"	In SM biosynthetic metacyc pathway		yes	
+PF00407.16	Bet_v_1	Pathogenesis-related protein Bet v I family	In SM biosynthetic metacyc pathway			
+PF00425.15	Chorismate_bind	chorismate binding enzyme	In SM biosynthetic metacyc pathway	yes	yes	
+PF00432.18	Prenyltrans	Prenyltransferase and squalene oxidase repeat	In SM biosynthetic metacyc pathway		yes	
+PF00441.21	Acyl-CoA_dh_1	"Acyl-CoA dehydrogenase, C-terminal domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF00450.19	Peptidase_S10	Serine carboxypeptidase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00454.24	PI3_PI4_kinase	Phosphatidylinositol 3- and 4-kinase	In SM biosynthetic metacyc pathway		yes	
+PF00459.22	Inositol_P	Inositol monophosphatase family	In SM biosynthetic metacyc pathway	yes	yes	
+PF00465.16	Fe-ADH	Iron-containing alcohol dehydrogenase 	In SM biosynthetic metacyc pathway		yes	yes
+PF00478.22	IMPDH	IMP dehydrogenase / GMP reductase domain	In SM biosynthetic metacyc pathway			
+PF00483.20	NTP_transferase	Nucleotidyl transferase	In SM biosynthetic metacyc pathway		yes	
+PF00487.21	FA_desaturase	Fatty acid desaturase	In SM biosynthetic metacyc pathway		yes	
+PF00491.18	Arginase	Arginase family	In SM biosynthetic metacyc pathway		yes	yes
+PF00494.16	SQS_PSY	Squalene/phytoene synthase	In SM biosynthetic metacyc pathway	yes	yes	
+PF00498.23	FHA	FHA domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00501.25	AMP-binding	AMP-binding enzyme	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00534.17	Glycos_transf_1	Glycosyl transferases group 1	In SM biosynthetic metacyc pathway		yes	yes
+PF00535.23	Glycos_transf_2	Glycosyl transferase family 2	In SM biosynthetic metacyc pathway		yes	yes
+PF00536.27	SAM_1	SAM domain (Sterile alpha motif)	In SM biosynthetic metacyc pathway		yes	yes
+PF00550.22	PP-binding	Phosphopantetheine attachment site	In SM biosynthetic metacyc pathway		yes	yes
+PF00561.17	Abhydrolase_1	alpha/beta hydrolase fold	In SM biosynthetic metacyc pathway		yes	yes
+PF00583.22	Acetyltransf_1	Acetyltransferase (GNAT) family	In SM biosynthetic metacyc pathway		yes	
+PF00587.22	tRNA-synt_2b	"tRNA synthetase class II core domain (G, H, P, S and T)"	In SM biosynthetic metacyc pathway			
+PF00596.18	Aldolase_II	Class II Aldolase and Adducin N-terminal domain	In SM biosynthetic metacyc pathway		yes	yes
+PF00613.17	PI3Ka	"Phosphoinositide 3-kinase family, accessory domain (PIK domain)"	In SM biosynthetic metacyc pathway		yes	
+PF00617.16	RasGEF	RasGEF domain	In SM biosynthetic metacyc pathway		yes	
+PF00620.24	RhoGAP	RhoGAP domain	In SM biosynthetic metacyc pathway		yes	yes
+PF00668.17	Condensation	Condensation domain	In SM biosynthetic metacyc pathway		yes	
+PF00682.16	HMGL-like	HMGL-like	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00685.24	Sulfotransfer_1	Sulfotransferase domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00696.25	AA_kinase	Amino acid kinase family	In SM biosynthetic metacyc pathway		yes	yes
+PF00698.18	Acyl_transf_1	Acyl transferase domain	In SM biosynthetic metacyc pathway		yes	
+PF00709.18	Adenylsucc_synt	Adenylosuccinate synthetase	In SM biosynthetic metacyc pathway			
+PF00724.17	Oxidored_FMN	NADH:flavin oxidoreductase / NADH oxidase family	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00725.19	3HCDH	"3-hydroxyacyl-CoA dehydrogenase, C-terminal domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00732.16	GMC_oxred_N	GMC oxidoreductase	In SM biosynthetic metacyc pathway		yes	yes
+PF00733.18	Asn_synthase	Asparagine synthase	In SM biosynthetic metacyc pathway		yes	yes
+PF00743.16	FMO-like	Flavin-binding monooxygenase-like	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF00753.24	Lactamase_B	Metallo-beta-lactamase superfamily	In SM biosynthetic metacyc pathway		yes	yes
+PF00765.14	Autoind_synth	Autoinducer synthase	In SM biosynthetic metacyc pathway			
+PF00766.16	ETF_alpha	Electron transfer flavoprotein FAD-binding domain	In SM biosynthetic metacyc pathway			
+PF00782.17	DSPc	"Dual specificity phosphatase, catalytic domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF00788.20	RA	Ras association (RalGDS/AF-6) domain	In SM biosynthetic metacyc pathway		yes	
+PF00797.14	Acetyltransf_2	N-acetyltransferase	In SM biosynthetic metacyc pathway			
+PF00800.15	PDT	Prephenate dehydratase	In SM biosynthetic metacyc pathway			
+PF00857.17	Isochorismatase	Isochorismatase family	In SM biosynthetic metacyc pathway		yes	yes
+PF00891.15	Methyltransf_2	O-methyltransferase	In SM biosynthetic metacyc pathway	yes	yes	
+PF00908.14	dTDP_sugar_isom	"dTDP-4-dehydrorhamnose 3,5-epimerase"	In SM biosynthetic metacyc pathway		yes	
+PF00941.18	FAD_binding_5	FAD binding domain in molybdopterin dehydrogenase	In SM biosynthetic metacyc pathway	yes		
+PF00975.17	Thioesterase	Thioesterase domain	In SM biosynthetic metacyc pathway		yes	
+PF00982.18	Glyco_transf_20	Glycosyltransferase family 20	In SM biosynthetic metacyc pathway		yes	
+PF01008.14	IF-2B	Initiation factor 2 subunit family	In SM biosynthetic metacyc pathway		yes	yes
+PF01012.18	ETF	Electron transfer flavoprotein domain	In SM biosynthetic metacyc pathway			
+PF01022.17	HTH_5	"Bacterial regulatory protein, arsR family"	In SM biosynthetic metacyc pathway			
+PF01040.15	UbiA	UbiA prenyltransferase family	In SM biosynthetic metacyc pathway		yes	
+PF01041.14	DegT_DnrJ_EryC1	DegT/DnrJ/EryC1/StrS aminotransferase family	In SM biosynthetic metacyc pathway		yes	yes
+PF01048.17	PNP_UDP_1	Phosphorylase superfamily	In SM biosynthetic metacyc pathway		yes	yes
+PF01063.16	Aminotran_4	Amino-transferase class IV	In SM biosynthetic metacyc pathway	yes	yes	
+PF01066.18	CDP-OH_P_transf	CDP-alcohol phosphatidyltransferase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01073.16	3Beta_HSD	3-beta hydroxysteroid dehydrogenase/isomerase family	In SM biosynthetic metacyc pathway	yes	yes	
+PF01118.21	Semialdhyde_dh	"Semialdehyde dehydrogenase, NAD binding domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF01128.16	IspD	2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase	In SM biosynthetic metacyc pathway	yes	yes	
+PF01148.17	CTP_transf_1	Cytidylyltransferase family	In SM biosynthetic metacyc pathway		yes	yes
+PF01154.14	HMG_CoA_synt_N	Hydroxymethylglutaryl-coenzyme A synthase N terminal	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01222.14	ERG4_ERG24	Ergosterol biosynthesis ERG4/ERG24 family	In SM biosynthetic metacyc pathway	yes	yes	
+PF01227.19	GTP_cyclohydroI	GTP cyclohydrolase I	In SM biosynthetic metacyc pathway			
+PF01242.16	PTPS	6-pyruvoyl tetrahydropterin synthase	In SM biosynthetic metacyc pathway			
+PF01243.17	Pyridox_oxidase	Pyridoxamine 5'-phosphate oxidase	In SM biosynthetic metacyc pathway		yes	
+PF01255.16	Prenyltransf	Putative undecaprenyl diphosphate synthase	In SM biosynthetic metacyc pathway		yes	
+PF01315.19	Ald_Xan_dh_C	"Aldehyde oxidase and xanthine dehydrogenase, a/b hammerhead domain"	In SM biosynthetic metacyc pathway	yes		
+PF01363.18	FYVE	FYVE zinc finger	In SM biosynthetic metacyc pathway		yes	yes
+PF01381.19	HTH_3	Helix-turn-helix	In SM biosynthetic metacyc pathway			
+PF01397.18	Terpene_synth	"Terpene synthase, N-terminal domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01408.19	GFO_IDH_MocA	"Oxidoreductase family, NAD-binding Rossmann fold"	In SM biosynthetic metacyc pathway		yes	yes
+PF01467.23	CTP_transf_like	Cytidylyltransferase-like	In SM biosynthetic metacyc pathway		yes	
+PF01474.13	DAHP_synth_2	Class-II DAHP synthetase family	In SM biosynthetic metacyc pathway			
+PF01477.20	PLAT	PLAT/LH2 domain	In SM biosynthetic metacyc pathway	yes	yes	
+PF01494.16	FAD_binding_3	FAD binding domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01501.17	Glyco_transf_8	Glycosyl transferase family 8	In SM biosynthetic metacyc pathway		yes	yes
+PF01504.15	PIP5K	Phosphatidylinositol-4-phosphate 5-Kinase	In SM biosynthetic metacyc pathway		yes	
+PF01575.16	MaoC_dehydratas	MaoC like domain	In SM biosynthetic metacyc pathway		yes	yes
+PF01593.21	Amino_oxidase	Flavin containing amine oxidoreductase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01596.14	Methyltransf_3	O-methyltransferase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01636.20	APH	Phosphotransferase enzyme family	In SM biosynthetic metacyc pathway		yes	yes
+PF01643.14	Acyl-ACP_TE	Acyl-ACP thioesterase	In SM biosynthetic metacyc pathway		yes	
+PF01658.14	Inos-1-P_synth	Myo-inositol-1-phosphate synthase	In SM biosynthetic metacyc pathway			
+PF01678.16	DAP_epimerase	Diaminopimelate epimerase	In SM biosynthetic metacyc pathway		yes	
+PF01729.16	QRPTase_C	"Quinolinate phosphoribosyl transferase, C-terminal domain"	In SM biosynthetic metacyc pathway		yes	
+PF01756.16	ACOX	Acyl-CoA oxidase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF01761.17	DHQ_synthase	3-dehydroquinate synthase	In SM biosynthetic metacyc pathway		yes	
+PF01799.17	Fer2_2	[2Fe-2S] binding domain	In SM biosynthetic metacyc pathway	yes		
+PF01817.18	CM_2	Chorismate mutase type II	In SM biosynthetic metacyc pathway		yes	
+PF01887.13	SAM_adeno_trans	S-adenosyl-l-methionine hydroxide adenosyltransferase	In SM biosynthetic metacyc pathway			
+PF01959.13	DHQS	3-dehydroquinate synthase (EC 4.6.1.3)	In SM biosynthetic metacyc pathway		yes	
+PF02153.14	PDH	Prephenate dehydrogenase	In SM biosynthetic metacyc pathway		yes	
+PF02211.12	NHase_beta	Nitrile hydratase beta subunit	In SM biosynthetic metacyc pathway			
+PF02274.14	Amidinotransf	Amidinotransferase	In SM biosynthetic metacyc pathway		yes	yes
+PF02353.17	CMAS	Mycolic acid cyclopropane synthetase	In SM biosynthetic metacyc pathway		yes	
+PF02383.15	Syja_N	SacI homology domain	In SM biosynthetic metacyc pathway		yes	yes
+PF02401.15	LYTB	LytB protein	In SM biosynthetic metacyc pathway	yes	yes	
+PF02431.12	Chalcone	Chalcone-flavanone isomerase	In SM biosynthetic metacyc pathway	yes		
+PF02441.16	Flavoprotein	Flavoprotein	In SM biosynthetic metacyc pathway		yes	yes
+PF02453.14	Reticulon	Reticulon	In SM biosynthetic metacyc pathway	yes	yes	
+PF02458.12	Transferase	Transferase family	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF02522.11	Antibiotic_NAT	Aminoglycoside 3-N-acetyltransferase	In SM biosynthetic metacyc pathway		yes	
+PF02542.13	YgbB	YgbB family	In SM biosynthetic metacyc pathway	yes	yes	
+PF02543.12	Carbam_trans_N	Carbamoyltransferase N-terminus	In SM biosynthetic metacyc pathway			
+PF02567.13	PhzC-PhzF	Phenazine biosynthesis-like protein	In SM biosynthetic metacyc pathway			
+PF02585.14	PIG-L	GlcNAc-PI de-N-acetylase	In SM biosynthetic metacyc pathway		yes	yes
+PF02595.12	Gly_kinase	Glycerate kinase family	In SM biosynthetic metacyc pathway		yes	yes
+PF02615.11	Ldh_2	Malate/L-lactate dehydrogenase	In SM biosynthetic metacyc pathway		yes	yes
+PF02655.11	ATP-grasp_3	ATP-grasp domain	In SM biosynthetic metacyc pathway		yes	
+PF02664.12	LuxS	S-Ribosylhomocysteinase (LuxS)	In SM biosynthetic metacyc pathway			
+PF02668.13	TauD	"Taurine catabolism dioxygenase TauD, TfdA family"	In SM biosynthetic metacyc pathway		yes	yes
+PF02670.13	DXP_reductoisom	1-deoxy-D-xylulose 5-phosphate reductoisomerase	In SM biosynthetic metacyc pathway	yes	yes	
+PF02729.18	OTCace_N	"Aspartate/ornithine carbamoyltransferase, carbamoyl-P binding domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF02737.15	3HCDH_N	"3-hydroxyacyl-CoA dehydrogenase, NAD binding domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF02738.15	Ald_Xan_dh_C2	Molybdopterin-binding domain of aldehyde dehydrogenase	In SM biosynthetic metacyc pathway	yes		
+PF02749.13	QRPTase_N	"Quinolinate phosphoribosyl transferase, N-terminal domain"	In SM biosynthetic metacyc pathway		yes	
+PF02770.16	Acyl-CoA_dh_M	"Acyl-CoA dehydrogenase, middle domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF02771.13	Acyl-CoA_dh_N	"Acyl-CoA dehydrogenase, N-terminal domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF02784.13	Orn_Arg_deC_N	"Pyridoxal-dependent decarboxylase, pyridoxal binding domain"	In SM biosynthetic metacyc pathway		yes	
+PF02785.16	Biotin_carb_C	Biotin carboxylase C-terminal domain	In SM biosynthetic metacyc pathway		yes	yes
+PF02786.14	CPSase_L_D2	"Carbamoyl-phosphate synthase L chain, ATP binding domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF02797.12	Chal_sti_synt_C	"Chalcone and stilbene synthases, C-terminal domain"	In SM biosynthetic metacyc pathway	yes	yes	
+PF02801.19	Ketoacyl-synt_C	"Beta-ketoacyl synthase, C-terminal domain"	In SM biosynthetic metacyc pathway		yes	
+PF02803.15	Thiolase_C	"Thiolase, C-terminal domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF02894.14	GFO_IDH_MocA_C	"Oxidoreductase family, C-terminal alpha/beta domain"	In SM biosynthetic metacyc pathway		yes	yes
+PF02900.15	LigB	Catalytic LigB subunit of aromatic ring-opening dioxygenase	In SM biosynthetic metacyc pathway		yes	yes
+PF02979.13	NHase_alpha	"Nitrile hydratase, alpha chain"	In SM biosynthetic metacyc pathway			
+PF03033.17	Glyco_transf_28	Glycosyltransferase family 28 N-terminal domain	In SM biosynthetic metacyc pathway		yes	yes
+PF03055.12	RPE65	Retinal pigment epithelial membrane protein	In SM biosynthetic metacyc pathway		yes	yes
+PF03061.19	4HBT	Thioesterase superfamily	In SM biosynthetic metacyc pathway		yes	yes
+PF03079.11	ARD	ARD/ARD' family	In SM biosynthetic metacyc pathway		yes	yes
+PF03088.13	Str_synth	Strictosidine synthase	In SM biosynthetic metacyc pathway			
+PF03171.17	2OG-FeII_Oxy	2OG-Fe(II) oxygenase superfamily	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF03241.10	HpaB	4-hydroxyphenylacetate 3-hydroxylase C terminal	In SM biosynthetic metacyc pathway		yes	yes
+PF03284.10	PHZA_PHZB	Phenazine biosynthesis protein A/B	In SM biosynthetic metacyc pathway			
+PF03301.10	Trp_dioxygenase	"Tryptophan 2,3-dioxygenase"	In SM biosynthetic metacyc pathway		yes	yes
+PF03364.17	Polyketide_cyc	Polyketide cyclase / dehydrase and lipid transport	In SM biosynthetic metacyc pathway			
+PF03372.20	Exo_endo_phos	Endonuclease/Exonuclease/phosphatase family	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF03417.13	AAT	Acyl-coenzyme A:6-aminopenicillanic acid acyl-transferase	In SM biosynthetic metacyc pathway			
+PF03447.13	NAD_binding_3	"Homoserine dehydrogenase, NAD binding domain"	In SM biosynthetic metacyc pathway			
+PF03450.14	CO_deh_flav_C	CO dehydrogenase flavoprotein C-terminal domain	In SM biosynthetic metacyc pathway	yes		
+PF03492.12	Methyltransf_7	SAM dependent carboxyl methyltransferase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF03559.11	Hexose_dehydrat	"NDP-hexose 2,3-dehydratase"	In SM biosynthetic metacyc pathway		yes	
+PF03583.11	LIP	Secretory lipase 	In SM biosynthetic metacyc pathway			
+PF03621.10	MbtH	MbtH-like protein	In SM biosynthetic metacyc pathway			
+PF03662.11	Glyco_hydro_79n	"Glycosyl hydrolase family 79, N-terminal domain "	In SM biosynthetic metacyc pathway			
+PF03770.13	IPK	Inositol polyphosphate kinase 	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF03781.13	FGE-sulfatase	Sulfatase-modifying factor enzyme 1	In SM biosynthetic metacyc pathway			
+PF03936.13	Terpene_synth_C	"Terpene synthase family, metal binding domain"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF03992.13	ABM	Antibiotic biosynthesis monooxygenase	In SM biosynthetic metacyc pathway		yes	yes
+PF04055.18	Radical_SAM	Radical SAM superfamily	In SM biosynthetic metacyc pathway		yes	yes
+PF04072.11	LCM	Leucine carboxyl methyltransferase	In SM biosynthetic metacyc pathway		yes	
+PF04107.10	GCS2	Glutamate-cysteine ligase family 2(GCS2)	In SM biosynthetic metacyc pathway		yes	
+PF04116.10	FA_hydroxylase	Fatty acid hydroxylase superfamily	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF04199.10	Cyclase	Putative cyclase	In SM biosynthetic metacyc pathway			
+PF04275.11	P-mevalo_kinase	Phosphomevalonate kinase 	In SM biosynthetic metacyc pathway		yes	
+PF04321.14	RmlD_sub_bind	RmlD substrate binding domain	In SM biosynthetic metacyc pathway		yes	yes
+PF04339.9	FemAB_like	Peptidogalycan biosysnthesis/recognition	In SM biosynthetic metacyc pathway			
+PF04551.11	GcpE	GcpE protein	In SM biosynthetic metacyc pathway	yes	yes	
+PF04655.11	APH_6_hur	Aminoglycoside/hydroxyurea antibiotic resistance kinase	In SM biosynthetic metacyc pathway			
+PF04673.9	Cyclase_polyket	Polyketide synthesis cyclase	In SM biosynthetic metacyc pathway			
+PF04715.10	Anth_synt_I_N	"Anthranilate synthase component I, N terminal region"	In SM biosynthetic metacyc pathway		yes	
+PF04820.11	Trp_halogenase	Tryptophan halogenase	In SM biosynthetic metacyc pathway			
+PF04863.10	EGF_alliinase	Alliinase EGF-like domain	In SM biosynthetic metacyc pathway			
+PF04864.10	Alliinase_C	Allinase	In SM biosynthetic metacyc pathway		yes	
+PF04909.11	Amidohydro_2	Amidohydrolase	In SM biosynthetic metacyc pathway		yes	yes
+PF05014.12	Nuc_deoxyrib_tr	Nucleoside 2-deoxyribosyltransferase	In SM biosynthetic metacyc pathway			
+PF05116.10	S6PP	Sucrose-6F-phosphate phosphohydrolase	In SM biosynthetic metacyc pathway		yes	
+PF05139.11	Erythro_esteras	Erythromycin esterase	In SM biosynthetic metacyc pathway			
+PF05199.10	GMC_oxred_C	GMC oxidoreductase	In SM biosynthetic metacyc pathway		yes	yes
+PF05241.9	EBP	Emopamil binding protein 	In SM biosynthetic metacyc pathway	yes	yes	
+PF05368.10	NmrA	NmrA-like family	In SM biosynthetic metacyc pathway		yes	
+PF05691.9	Raffinose_syn	Raffinose synthase or seed imbibition protein Sip1	In SM biosynthetic metacyc pathway		yes	yes
+PF05711.8	TylF	Macrocin-O-methyltransferase (TylF)	In SM biosynthetic metacyc pathway			
+PF05721.10	PhyH	Phytanoyl-CoA dioxygenase (PhyH)	In SM biosynthetic metacyc pathway		yes	yes
+PF05770.8	Ins134_P3_kin	"Inositol 1, 3, 4-trisphosphate 5/6-kinase"	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF05834.9	Lycopene_cycl	Lycopene cyclase protein	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF05995.9	CDO_I	Cysteine dioxygenase type I	In SM biosynthetic metacyc pathway		yes	yes
+PF06057.8	VirJ	Bacterial virulence protein (VirJ)	In SM biosynthetic metacyc pathway			
+PF06090.9	Ins_P5_2-kin	Inositol-pentakisphosphate 2-kinase	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF06094.9	GGACT	"Gamma-glutamyl cyclotransferase, AIG2-like"	In SM biosynthetic metacyc pathway			
+PF06351.8	Allene_ox_cyc	Allene oxide cyclase	In SM biosynthetic metacyc pathway	yes		
+PF06508.10	QueC	Queuosine biosynthesis protein QueC	In SM biosynthetic metacyc pathway			
+PF06602.11	Myotub-related	Myotubularin-like phosphatase domain	In SM biosynthetic metacyc pathway		yes	yes
+PF07137.8	VDE	VDE lipocalin domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF07143.8	CrtC	CrtC N-terminal lipocalin domain	In SM biosynthetic metacyc pathway			
+PF07298.8	NnrU	NnrU protein	In SM biosynthetic metacyc pathway	yes		
+PF07366.9	SnoaL	SnoaL-like polyketide cyclase	In SM biosynthetic metacyc pathway			
+PF07731.11	Cu-oxidase_2	Multicopper oxidase	In SM biosynthetic metacyc pathway		yes	yes
+PF07859.10	Abhydrolase_3	alpha/beta hydrolase fold	In SM biosynthetic metacyc pathway		yes	yes
+PF07883.8	Cupin_2	Cupin domain	In SM biosynthetic metacyc pathway		yes	yes
+PF07993.9	NAD_binding_4	Male sterility protein	In SM biosynthetic metacyc pathway		yes	
+PF07994.9	NAD_binding_5	Myo-inositol-1-phosphate synthase	In SM biosynthetic metacyc pathway			
+PF08031.9	BBE	Berberine and berberine like 	In SM biosynthetic metacyc pathway			
+PF08100.8	Dimerisation	Dimerisation domain	In SM biosynthetic metacyc pathway	yes	yes	
+PF08241.9	Methyltransf_11	Methyltransferase domain	In SM biosynthetic metacyc pathway	yes	yes	
+PF08242.9	Methyltransf_12	Methyltransferase domain	In SM biosynthetic metacyc pathway		yes	yes
+PF08392.9	FAE1_CUT1_RppA	FAE1/Type III polyketide synthase-like protein	added manually			
+PF08415.7	NRPS	Nonribosomal peptide synthase	In SM biosynthetic metacyc pathway			
+PF08421.8	Methyltransf_13	Putative zinc binding domain	In SM biosynthetic metacyc pathway		yes	
+PF08436.9	DXP_redisom_C	1-deoxy-D-xylulose 5-phosphate reductoisomerase C-terminal	In SM biosynthetic metacyc pathway	yes	yes	
+PF08484.8	Methyltransf_14	C-methyltransferase C-terminal domain	In SM biosynthetic metacyc pathway		yes	
+PF08491.7	SE	Squalene epoxidase	In SM biosynthetic metacyc pathway	yes	yes	
+PF08498.7	Sterol_MT_C	Sterol methyltransferase C-terminal	In SM biosynthetic metacyc pathway	yes	yes	
+PF08540.7	HMG_CoA_synt_C	Hydroxymethylglutaryl-coenzyme A synthase C terminal	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF08541.7	ACP_syn_III_C	3-Oxoacyl-[acyl-carrier-protein (ACP)] synthase III C terminal  	In SM biosynthetic metacyc pathway		yes	
+PF08543.9	Phos_pyr_kin	Phosphomethylpyrimidine kinase	In SM biosynthetic metacyc pathway		yes	
+PF08544.10	GHMP_kinases_C	GHMP kinases C terminal 	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF08545.7	ACP_syn_III	3-Oxoacyl-[acyl-carrier-protein (ACP)] synthase III	In SM biosynthetic metacyc pathway		yes	
+PF08659.7	KR	KR domain	In SM biosynthetic metacyc pathway		yes	
+PF08703.7	PLC-beta_C	PLC-beta C terminal	In SM biosynthetic metacyc pathway		yes	
+PF08892.8	YqcI_YcgG	YqcI/YcgG family	In SM biosynthetic metacyc pathway		yes	
+PF08990.8	Docking	Erythronolide synthase docking	In SM biosynthetic metacyc pathway			
+PF09277.8	Erythro-docking	"Erythronolide synthase, docking"	In SM biosynthetic metacyc pathway			
+PF09279.8	EF-hand_like	"Phosphoinositide-specific phospholipase C, efhand-like"	In SM biosynthetic metacyc pathway		yes	
+PF09788.6	Tmemb_55A	Transmembrane protein 55A	In SM biosynthetic metacyc pathway		yes	yes
+PF10017.6	Methyltransf_33	"Histidine-specific methyltransferase, SAM-dependent"	In SM biosynthetic metacyc pathway			
+PF10397.6	ADSL_C	Adenylosuccinate lyase C-terminus	In SM biosynthetic metacyc pathway		yes	yes
+PF10409.6	PTEN_C2	C2 domain of PTEN tumour-suppressor protein	In SM biosynthetic metacyc pathway		yes	yes
+PF10590.6	PNPOx_C	Pyridoxine 5'-phosphate oxidase C-terminal dimerisation region	In SM biosynthetic metacyc pathway		yes	
+PF10604.6	Polyketide_cyc2	Polyketide cyclase / dehydrase and lipid transport	In SM biosynthetic metacyc pathway			
+PF11468.5	PTase_Orf2	Aromatic prenyltransferase Orf2	In SM biosynthetic metacyc pathway		yes	
+PF11794.5	HpaB_N	4-hydroxyphenylacetate 3-hydroxylase N terminal	In SM biosynthetic metacyc pathway		yes	yes
+PF11991.5	Trp_DMAT	Tryptophan dimethylallyltransferase	In SM biosynthetic metacyc pathway			
+PF12680.4	SnoaL_2	SnoaL-like domain	In SM biosynthetic metacyc pathway			
+PF12681.4	Glyoxalase_2	Glyoxalase-like domain	In SM biosynthetic metacyc pathway		yes	yes
+PF12697.4	Abhydrolase_6	Alpha/beta hydrolase family	In SM biosynthetic metacyc pathway		yes	yes
+PF12804.4	NTP_transf_3	MobA-like NTP transferase domain	In SM biosynthetic metacyc pathway		yes	
+PF12867.4	DinB_2	DinB superfamily	In SM biosynthetic metacyc pathway			
+PF13186.3	SPASM	Iron-sulfur cluster-binding domain	In SM biosynthetic metacyc pathway		yes	
+PF13193.3	AMP-binding_C	AMP-binding enzyme C-terminal domain	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF13243.3	SQHop_cyclase_C	Squalene-hopene cyclase C-terminal domain	added from Arabidopsis introproscan			
+PF13249.3	SQHop_cyclase_N	Squalene-hopene cyclase N-terminal domain	added from Arabidopsis introproscan			
+PF13277.3	YmdB	YmdB-like protein	In SM biosynthetic metacyc pathway			
+PF13288.3	DXPR_C	DXP reductoisomerase C-terminal domain	In SM biosynthetic metacyc pathway	yes	yes	
+PF13292.3	DXP_synthase_N	1-deoxy-D-xylulose-5-phosphate synthase	In SM biosynthetic metacyc pathway	yes	yes	
+PF13323.3	HPIH	N-terminal domain with HPIH motif	In SM biosynthetic metacyc pathway		yes	
+PF13380.3	CoA_binding_2	CoA binding domain	In SM biosynthetic metacyc pathway		yes	yes
+PF13419.3	HAD_2	Haloacid dehalogenase-like hydrolase	In SM biosynthetic metacyc pathway		yes	yes
+PF13450.3	NAD_binding_8	NAD(P)-binding Rossmann-like domain	added from Arabidopsis introproscan			
+PF13508.4	Acetyltransf_7	Acetyltransferase (GNAT) domain	In SM biosynthetic metacyc pathway		yes	
+PF13537.3	GATase_7	Glutamine amidotransferase domain	In SM biosynthetic metacyc pathway		yes	yes
+PF13579.3	Glyco_trans_4_4	Glycosyl transferase 4-like domain	In SM biosynthetic metacyc pathway		yes	yes
+PF13580.3	SIS_2	SIS domain	In SM biosynthetic metacyc pathway		yes	
+PF13847.3	Methyltransf_31	Methyltransferase domain	In SM biosynthetic metacyc pathway		yes	yes
+PF14226.3	DIOX_N	non-haem dioxygenase in morphine synthesis N-terminal	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF14299.3	PP2	Phloem protein 2	In SM biosynthetic metacyc pathway			
+PF14399.3	BtrH_N	"Butirosin biosynthesis protein H, N-terminal"	In SM biosynthetic metacyc pathway			
+PF14749.3	Acyl-CoA_ox_N	Acyl-coenzyme A oxidase N-terminal	In SM biosynthetic metacyc pathway	yes	yes	yes
+PF14765.3	PS-DH	Polyketide synthase dehydratase	In SM biosynthetic metacyc pathway		yes	
