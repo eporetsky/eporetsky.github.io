@@ -320,8 +320,8 @@ And now we can run MEME-ChIP from the command-line or from their [website](https
 
 ```
 meme-chip -oc WRKY18 WRKY18_differential_binding_sites.fa
-meme-chip -oc WRKY18 WRKY33_differential_binding_sites.fa
-meme-chip -oc WRKY18 WRKY40_differential_binding_sites.fa
+meme-chip -oc WRKY33 WRKY33_differential_binding_sites.fa
+meme-chip -oc WRKY40 WRKY40_differential_binding_sites.fa
 ```
 
 As you can see from the results, we have detected the (T)TGAC(C/T) [W-box](https://en.wikipedia.org/wiki/W-box) binding motif for WRKY33 and WRKY40, but not for WRKY18. Although we have not looked at the actual DiffBind differential binding results yet, we anticipated not getting strong statistical signal for WRKY18, which is likely to be the reason for why we haven't detected the W-box binding motif. We will likely find the W-box binding motif if we just extract the the centered peaks without conducting the DiffBind analysis, as done in the paper. Interestingly, we did detect a somewhat modified (T)TGA(C/A)(C/T) W-box binding motif for WRKY33 that was not reported in the paper but could be interesting to follow up on. 
@@ -334,12 +334,42 @@ I have also uploaded the MEME outputs for the three WRKY TFs [here](https://gith
 
 ### Brief introduction
 
-TODO
-
 [Tutorial](https://bioconductor.org/packages/devel/bioc/vignettes/ChIPseeker/inst/doc/ChIPseeker.html){: .btn .btn-green }
+
+### Making an organism package
+
+Functional enrichment analysis is one the powerful functionalities of the ChIPseeker package. Unless the genome we work with is publicly available, we would need to generate our own organism package with custom data. In this case, we are going to use the gene ontology annotations for the Arabidopsis Araport11 genome annotation that can be [found here](https://www.arabidopsis.org/download/list?dir=Public_Data_Releases%2FTAIR_Data_20231231) in the `Araport11_functional_descriptions_20231231.txt.gz` file. We first need to organize the data into a new dataframe, `go.csv`, with the following structure:
+
+| GID | GO | EVIDENCE |
+| ----- | ---------- | --- |
+| gene1 | GO:0000002 | IBA |
+| gene1 | GO:0000012 | IBA |
+| gene2 | GO:0000002 | IBA |
+
+Next
+
+Next, we can run the `makeOrgPackage` function to create a new 
+organism package from any collection of data, gene ontology data in this case, that are united by a common gene ID.
+
+```
+fGO <- read.table("go.csv",sep=",", head=T)
+
+makeOrgPackage(go=fGO,
+               version="0.1",
+               maintainer="Your Name <your.name@email.org>",
+               author="Elly Poretsky <your.name@email.org>",
+               tax_id="3702",
+               outputDir = ".",
+               genus="Arabidopsis",
+               species="Ara11",
+               goTable="go")
+
+install.packages("./org.AAra11.eg.db", repos=NULL)
+```
 
 ### Example result
 
 Preliminary teaser with incomplete data analysis, but something seems to work.
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/chipseq/img.chipseeker.AvgProf.png?raw=true){: width="500" }
+
