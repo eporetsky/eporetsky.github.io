@@ -18,7 +18,7 @@ This section includes code for processing and analyzing transcriptomics data.
 {:toc}
 </details>
 
-# RNA-seq data analysis
+# Processing raw RNA-seq data
 
 In this tutorial, I will be talking about how I analyze short-read RNA-seq data and how I use it to obtain valuable information on understanding
 biological processes. There are a number of advantages to using RNA-seq data compared to other omics approaches. Mainly, it is fairly simple and
@@ -237,6 +237,155 @@ python workflow.rnaseq.py
 
 * Note that `/mount/ramdisk` is mounted as a tmpfs folder, which means that all intermediate files are written to the RAM memory and not to disk. The main reason I am using this is to reduce the amount of write-cycles, but it should also speed up the analysis because files are not written and read from the disk. This might not work if you do not have the proper permissions, so you might need remove the `--mount` process.
 * It is very important to run the MD5 checksum on the downloaded FASTQ files from ENA. Often times, especially for very large FASTQ files, the downloaded file does not match the provided MD5. Instead of throwing an error, you are still very likely to generate all the correct files but they are just going to be incomplete and there is no easy way to tell if the output was correctly analyzed or not. 
+
+# Differential gene expression
+
+## Creating a conda environment
+
+Let's first create a `environment.yml` file. We will probably make changes to this file as we continue running the analysis. I prefer having the `RStudio` installed and opened through the conda environment to avoid incompatibility issues and to keep the analysis more reproducible as packages continue to update.  
+
+```
+name: deg
+channels:
+  - conda-forge
+  - bioconda
+  - r
+dependencies:
+  - python
+  - pip
+  - rstudio
+  - r-base 
+  - r-essentials 
+  - bioconductor-edger 
+  - bioconductor-clusterprofiler 
+  - bioconductor-annotationforge
+  - r-ggplot2
+  - r-ggvenndiagram
+  - r-venndiagram
+```
+
+```
+conda env create -f environment.yml
+conda activate deg
+rstudio
+```
+
+## Running edgeR to detect DEGs
+
+```
+# Load required libraries
+library(edgeR)
+
+# Load the raw count data
+counts <- read.table("PRJNA1152285.clean.tsv", row.names = 1, sep="\t", header=T)
+
+# Define group information
+group <- factor(c(rep("Control", 3), rep("B. japonicum", 3), rep("B. velezensis", 3), rep("Both", 3)))
+
+# Create a DGEList object
+dge <- DGEList(counts = counts, group = group)
+
+# Filter lowly expressed genes
+keep <- filterByExpr(dge)
+dge <- dge[keep, , keep.lib.sizes = FALSE]
+
+# Normalize the data
+dge <- calcNormFactors(dge)
+
+# Estimate dispersion
+dge <- estimateDisp(dge)
+
+# Create a design matrix
+design <- model.matrix(~0 + group)
+colnames(design) <- levels(group)
+
+# Fit the model
+fit <- glmFit(dge, design)
+
+# Perform likelihood ratio tests for each treatment vs control
+lrt_A <- glmLRT(fit, contrast = c(-1, 1, 0, 0))  # TreatmentA vs Control
+lrt_B <- glmLRT(fit, contrast = c(-1, 0, 1, 0))  # TreatmentB vs Control
+lrt_C <- glmLRT(fit, contrast = c(-1, 0, 0, 1))  # TreatmentC vs Control
+
+# Save results to CSV
+write.csv(topTags(lrt_A)$table, "DEG_TreatmentA_vs_Control.csv")
+write.csv(topTags(lrt_B)$table, "DEG_TreatmentB_vs_Control.csv")
+write.csv(topTags(lrt_C)$table, "DEG_TreatmentC_vs_Control.csv")
+
+# Generate an MDS plot
+plotMDS(dge, col = as.numeric(group))
+legend("topright", legend = levels(group), col = 1:length(levels(group)), pch = 16)
+```
+
+We can see that all our samples group well together
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/deg_mds.png?raw=true){: width="800" }
+
+## Comparing the DEGs between the different conditions
+
+```
+# Identify significantly up- and down-regulated genes
+up_A <- rownames(topTags(lrt_A, n = Inf)$table[topTags(lrt_A, n = Inf)$table$logFC > 1 & topTags(lrt_A, n = Inf)$table$FDR < 0.05, ])
+down_A <- rownames(topTags(lrt_A, n = Inf)$table[topTags(lrt_A, n = Inf)$table$logFC < -1 & topTags(lrt_A, n = Inf)$table$FDR < 0.05, ])
+up_B <- rownames(topTags(lrt_B, n = Inf)$table[topTags(lrt_B, n = Inf)$table$logFC > 1 & topTags(lrt_B, n = Inf)$table$FDR < 0.05, ])
+down_B <- rownames(topTags(lrt_B, n = Inf)$table[topTags(lrt_B, n = Inf)$table$logFC < -1 & topTags(lrt_B, n = Inf)$table$FDR < 0.05, ])
+up_C <- rownames(topTags(lrt_C, n = Inf)$table[topTags(lrt_C, n = Inf)$table$logFC > 1 & topTags(lrt_C, n = Inf)$table$FDR < 0.05, ])
+down_C <- rownames(topTags(lrt_C, n = Inf)$table[topTags(lrt_C, n = Inf)$table$logFC < -1 & topTags(lrt_C, n = Inf)$table$FDR < 0.05, ])
+```
+
+Now that we have the list of up- and down-regulated DEGs for the three different conditions, we can use `ggVennDiagram` to make two Venn diagrams to compare the overlap between the different gene sets.
+
+```
+# Load the library
+library(ggplot2)
+library(ggVennDiagram)
+
+# Create a list of up-regulated genes for each treatment
+venn_list_up <- list(
+  "B. japonicum" = up_A,
+  "B. velezensis" = up_B,
+  "Both" = up_C
+)
+
+# Create a list of up-regulated genes for each treatment
+venn_list_down <- list(
+  "B. japonicum" = down_A,
+  "B. velezensis" = down_B,
+  "Both" = down_C
+)
+
+# Generate a Venn diagram
+ggVennDiagram(venn_list_up) +
+  scale_fill_gradient(low = "white", high = "blue") +
+  #theme_minimal() +
+  theme(
+    panel.background = element_blank(),
+    plot.background = element_blank()
+  ) +
+  ggplot2::theme(
+    legend.position = "none",  # Optional: Remove the legend
+    plot.margin = ggplot2::margin(0, 30, 0, 30)  # Adjust margins
+  )                                  
+
+# Generate a Venn diagram
+ggVennDiagram(venn_list_down) +
+  scale_fill_gradient(low = "white", high = "blue") +
+  #theme_minimal() +
+  theme(
+    panel.background = element_blank(),
+    plot.background = element_blank()
+  ) +
+  ggplot2::theme(
+    legend.position = "none",  # Optional: Remove the legend
+    plot.margin = ggplot2::margin(0, 30, 0, 30)  # Adjust margins
+  )
+```
+
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/deg_mds.png?raw=true){: width="800" }
+
+## GO enrichment analysis
+
+TODO
 
 # Removing batch effects
 
