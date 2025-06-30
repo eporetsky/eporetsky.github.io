@@ -26,10 +26,23 @@ I have been working on creating Colab notebooks for a number of bioinformatics p
 
 A Colab notebook I prepared for predicting protein phosphorylation sites for a user-provided protein, based on our PhosBoost manuscript. The Colab notebook runs fast on a CPU node, so it should also work with a free account. Additional details can be found in the paper, GitHub repository, and the Colab notebook.
 
-[Paper](https://github.com/eporetsky/PhosBoost){: .btn .btn-purple }
-[GitHub](https://onlinelibrary.wiley.com/doi/10.1002/pld3.554){: .btn .btn-blue }
+[Paper](https://onlinelibrary.wiley.com/doi/10.1002/pld3.554){: .btn .btn-purple }
+[GitHub](https://github.com/eporetsky/PhosBoost){: .btn .btn-blue }
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/img_PhosBoost.png?raw=true){: width="400" }
+
+## AllMetal3D
+
+<a target="_blank" href="https://colab.research.google.com/github/eporetsky/workflows/blob/main/Colab/AllMetal3D.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+## 
+
+A minimal Colab notebook for predicting metal and water binding sites in proteins. Works with CUDA out of the box when running on a GPU node.
+
+[Paper](https://www.biorxiv.org/content/10.1101/2025.02.05.636627v1.abstract){: .btn .btn-purple }
+[GitHub](https://github.com/lcbc-epfl/allmetal3d){: .btn .btn-blue }
 
 ## AlphaFill-Relax
 
