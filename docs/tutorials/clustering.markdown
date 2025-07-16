@@ -2,7 +2,7 @@
 layout: page
 title: Clustering Analysis
 permalink: /tutorials/clustering
-nav_order: 7
+nav_order: 8
 parent: Tutorials
 has_toc: false
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Coexpression Analysis
 permalink: /tutorials/coexpression
-nav_order: 4
+nav_order: 5
 parent: Tutorials
 has_toc: false
 ---
@@ -48,7 +48,7 @@ MutClust is a Python package designed for RNA-seq gene coexpression analyses. It
 
 ## Example use case
 
-I have used MutClust to analyze five different maize transcriptomic datasets (PRJEB10574,PRJEB36014,PRJEB67964,PRJNA383416,PRJNA990645) that contain a relatively large number of samples. While we generally use the MR values to consider the functional association between genes, I took a different approach here. Instead, I parsed the clustering results of the complete network, filtered the clusters for genes predicted to be associated with plant specialized metabolism using Pfam domains (as described in the [Wisecaver paper](https://academic.oup.com/plcell/article-abstract/29/5/944/6099316)), and counted the unique cluster pairs. I then filtered the unique cluster pairs if they showed up to be coexpressed in at least two of the transcripomic experiments. The results were visualized using Cytoscape and the cytoscape graph file is [available here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/coexpression/maize_specialized_metabolism.cys). The list of Pfam associated with specialized metabolism pathways is [available here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/coexpression/Wisecaver_Pfams.tsv).
+I have used MutClust to analyze five different maize transcriptomic datasets (PRJEB10574, PRJEB36014, PRJEB67964, PRJNA383416, PRJNA990645) that contain a relatively large number of samples. While we generally use the MR values to consider the functional association between genes, I took a different approach here. Instead, I parsed the clustering results of the complete network, filtered the clusters for genes predicted to be associated with plant specialized metabolism using Pfam domains (as described in the [Wisecaver paper](https://academic.oup.com/plcell/article-abstract/29/5/944/6099316)), and counted the unique cluster pairs. I then filtered the unique cluster pairs if they showed up to be coexpressed in at least two of the transcripomic experiments. The results were visualized using Cytoscape and the cytoscape graph file is [available here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/coexpression/maize_specialized_metabolism.cys). The list of Pfam associated with specialized metabolism pathways is [available here](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/coexpression/Wisecaver_Pfams.tsv).
 
 In the image below, we can see the network graph of maize specialized metabolism genes. The major maize terpene synthases (TPSs) are colored in orange and the edge widths are adjusted based on the number of experiments the MR coexpression was detected in.
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/coexpression/img_maize_metabolomics_network.png?raw=true){: width="500" }

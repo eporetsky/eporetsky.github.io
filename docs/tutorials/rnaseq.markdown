@@ -381,7 +381,7 @@ ggVennDiagram(venn_list_down) +
   )
 ```
 
-![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/deg_mds.png?raw=true){: width="800" }
+![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/tutorials/rnaseq/deg_venn.png?raw=true){: width="800" }
 
 ## GO enrichment analysis
 
