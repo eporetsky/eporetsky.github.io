@@ -2,7 +2,7 @@
 layout: page
 title: Miscellaneous
 permalink: /tutorials/miscellaneous
-nav_order: 9
+nav_order: 10
 parent: Tutorials
 has_toc: false
 ---
