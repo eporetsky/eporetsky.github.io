@@ -2,6 +2,9 @@
 layout: page
 title: Tutorials
 permalink: /tutorials/
+redirect_from:
+  - /tutorials/clustering
+  - /tutorials/clustering/
 nav_order: 5
 has_children: true
 has_toc: true

@@ -1,0 +1,37 @@
+Local preview (QC) for eporetsky.github.io
+==========================================
+
+Uses Pixi for Ruby, Bundler for gems, Jekyll 4 + Beautiful Jekyll (see Gemfile / _config.yml).
+
+Prerequisites — install Pixi (pick one):
+
+   curl -fsSL https://pixi.sh/install.sh | sh
+   wget -qO- https://pixi.sh/install.sh | sh
+
+From the repository root:
+
+1) Create / update the Pixi env:
+
+   pixi install
+
+2) Install gems from the Gemfile:
+
+   pixi run install
+
+3) Build or serve:
+
+   pixi run build
+   pixi run serve
+
+   Or in one step (install + serve with live reload):
+
+   pixi run dev
+
+   Open the URL Jekyll prints (usually http://127.0.0.1:4000).
+
+Notes
+-----
+- GitHub Pages: use the Actions workflow and set Pages “Source” to GitHub Actions.
+- If native gem builds fail on macOS, install Xcode Command Line Tools.
+- If Sass/locale errors appear, try `LC_ALL=en_US.UTF-8 pixi run serve`.
+- `notes.txt` is gitignored. Copy this file to `notes.txt` for a local-only copy.

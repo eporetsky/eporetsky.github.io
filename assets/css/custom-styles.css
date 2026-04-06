@@ -1,0 +1,172 @@
+/* --- Brand polish on Beautiful Jekyll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #faf9f6 0%, #f2efe8 55%, #ebe6dc 100%);
+  background-attachment: fixed;
+}
+
+.navbar-custom {
+  box-shadow: 0 2px 14px rgba(30, 95, 74, 0.09);
+  border-bottom: 1px solid rgba(30, 95, 74, 0.14) !important;
+}
+
+footer.footer-min {
+  border-top: 1px solid rgba(30, 95, 74, 0.12);
+}
+
+/* Site title in navbar: one line */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-brand:hover {
+  white-space: nowrap;
+  max-width: min(100vw - 8rem, 22rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 992px) {
+  .navbar-custom .navbar-brand {
+    max-width: none;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+
+/* Home / page hero title: keep “Elly Poretsky, PhD” on one line */
+.intro-header .page-heading h1 {
+  white-space: nowrap;
+}
+
+@media (min-width: 1200px) {
+  .intro-header .page-heading h1 {
+    font-size: clamp(2.25rem, 3.6vw, 5rem);
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-header .page-heading h1 {
+    font-size: clamp(1.35rem, 6.5vw, 2rem);
+  }
+}
+
+/*
+ * Nav: dropdown toggles wrap at word boundaries (not mid-word).
+ * Dropdown panels are wider; items wrap between words (overflow-wrap: normal).
+ * Do not set overflow on .navbar-nav — it clips Bootstrap dropdowns.
+ */
+.navbar-custom .navbar-nav {
+  flex-wrap: nowrap;
+}
+
+/* Vertically center all top-level items with the navbar (dropdowns vs single links) */
+@media (min-width: 1200px) {
+  .navbar-expand-xl.navbar-custom .navbar-nav {
+    align-items: center;
+  }
+}
+
+.navbar-custom .navbar-nav > .nav-item:not(.dropdown) > .nav-link {
+  white-space: nowrap;
+}
+
+.navbar-custom .navbar-nav > .nav-item.dropdown > .nav-link.dropdown-toggle {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: manual;
+  text-align: center;
+  max-width: 12.5rem;
+  line-height: 1.25;
+  /* keep default Bootstrap nav-link padding so baseline matches Home / PlantApp */
+}
+
+.navbar-custom .dropdown-menu {
+  min-width: min(22rem, calc(100vw - 2rem));
+  max-width: min(30rem, calc(100vw - 2rem));
+  box-sizing: border-box;
+}
+
+.navbar-custom .dropdown-menu .dropdown-item {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: manual;
+  line-height: 1.35;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+@media (min-width: 1200px) {
+  .navbar-custom .dropdown-menu {
+    min-width: min(24rem, calc(100vw - 2rem));
+    max-width: min(32rem, calc(100vw - 2rem));
+  }
+}
+
+/* Main content: light card feel */
+#main-content .container[role="main"],
+.container[role="main"] {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(26, 25, 23, 0.06);
+  padding-top: 1.75rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 991px) {
+  #main-content .container[role="main"],
+  .container[role="main"] {
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+
+.intro-header {
+  box-shadow: inset 0 -1px 0 rgba(30, 95, 74, 0.08);
+}
+
+/* --- Tutorial / page buttons (Kramdown) --- */
+a.btn {
+  display: inline-block;
+  margin: 0.2rem 0.35rem 0.2rem 0;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+
+a.btn-purple {
+  background: #1e4d3f;
+  border-color: #1e4d3f;
+  color: #fff !important;
+}
+
+a.btn-blue {
+  background: transparent;
+  border-color: #1e5f4a;
+  color: #1e5f4a !important;
+}
+
+a.btn-green {
+  background: #3d6b54;
+  border-color: #3d6b54;
+  color: #fff !important;
+}
+
+a.btn:not(.btn-purple):not(.btn-blue):not(.btn-green) {
+  background: #e8e6e1;
+  border-color: #c9c4ba;
+  color: #333 !important;
+}
+
+a.btn.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}

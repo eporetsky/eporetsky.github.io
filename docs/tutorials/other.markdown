@@ -1,7 +1,10 @@
 ---
 layout: page
-title: Miscellaneous
-permalink: /tutorials/miscellaneous
+title: Other
+permalink: /tutorials/other
+redirect_from:
+  - /tutorials/miscellaneous
+  - /tutorials/miscellaneous/
 nav_order: 10
 parent: Tutorials
 has_toc: false

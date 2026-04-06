@@ -1,6 +1,6 @@
 ---
 layout: page
-title: UCSD Research
+title: Past Research
 permalink: /research/ucsd
 nav_order: 2
 parent: Research

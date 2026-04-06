@@ -1,62 +1,100 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Beautiful Jekyll (remote theme) — https://github.com/daattali/beautiful-jekyll
+remote_theme: daattali/beautiful-jekyll@6.0.1
 
 title: Elly Poretsky, PhD
-#email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-mastodon_username: genomic.social/@eporetsky
-github_username:  eporetsky
+author: Elly Poretsky
+description: >-
+  Plant immunity, comparative genomics, protein modeling, and practical
+  bioinformatics tutorials.
 
-# Build settings
-# theme: minima
-remote_theme: pmarsceill/just-the-docs
-color_scheme: "light"
-search_enabled: true
+url: "https://eporetsky.github.io"
+baseurl: ""
+
+navbar-links:
+  Home: "/"
+  PlantApp: "plantapp/"
+  Research:
+    - Overview: "research/"
+    - Current research: "research/current"
+    - Past Research: "research/ucsd"
+    - CV: "research/CV"
+    - Citations: "research/citations"
+  Analysis Tools:
+    - Workflows: "analysis-tools/workflows"
+    - MutRank: "analysis-tools/mutrank"
+    - MutClust: "analysis-tools/mutclust"
+    - MutAgg: "analysis-tools/mutagg"
+    - NailScan: "analysis-tools/nailscan"
+    - RobustGRN: "analysis-tools/robustgrn"
+    - PyRRA: "analysis-tools/pyrra"
+  Tutorials:
+    - Protein annotation: "tutorials/annotation"
+    - RNA-seq: "tutorials/rnaseq"
+    - ChIP-seq: "tutorials/chipseq"
+    - Nanopore: "tutorials/nanopore"
+    - Protein-ligand: "tutorials/protein_ligand"
+    - Coexpression: "tutorials/coexpression"
+    - Protein language models: "tutorials/plm"
+    - Comparative genomics: "tutorials/comparative"
+    - Other: "tutorials/other"
+
+social-network-links:
+  github: eporetsky
+  mastodon: genomic.social/@eporetsky
+  linkedin: eporetsky
+  google-scholar: citations?user=g0GnVFUAAAAJ
+
+gtag: G-JW0N93QGY1
+
+post_search: false
+edit_page_button: true
+title-on-all-pages: true
+
+navbar-col: "#f3f1ec"
+footer-col: "#eae8e3"
+link-col: "#1e5f4a"
+hover-col: "#0f3d32"
+
+site-css:
+  - "/assets/css/custom-styles.css"
+
+permalink: /:year-:month-:day-:title/
+paginate: 5
+paginate_path: "/page:num"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+timezone: America/Los_Angeles
+date_format: "%B %d, %Y"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      comments: false
+      social-share: false
+  - scope:
+      path: ""
+    values:
+      layout: page
 
 plugins:
-  - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
-ga_tracking: G-JW0N93QGY1
-ga_tracking_anonymize_ip: true
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - notes.txt
+  - vendor
+  - pixi.toml
+  - pixi.lock
+  - .pixi
+  - README.md

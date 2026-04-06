@@ -1,29 +1,21 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-title: About
-nav_order: 1
-has_toc: false
+title: Elly Poretsky, PhD
+subtitle: Biologist & bioinformatician — plant genomics, proteins, and computation
 ---
 
-# About me
+## About
 
-Hello, I’m Elly Poretsky—a biologist and bioinformatician passionate about uncovering the molecular underpinnings of life. My expertise lies at the intersection of plant immunity, comparative genomics, and computational protein methods, where I leverage cutting-edge computational tools to address fundamental biological questions.
-I earned my Ph.D. in the Huffaker Lab at UC San Diego, where I explored diverse projects, from characterizing a maize anti-herbivory receptor to investigating peptide hormones and their receptors, as well as unraveling metabolic biosynthetic pathways. This work laid the foundation for a career that bridges experimental biology with computational innovation.
+I am a biologist and computational scientist focused on understanding how genes and proteins shape plant biology, with a particular interest in plant interaction with other organisms. My work sits at the intersection of plant genetics, biochemistry, molecular biology, and bioinformatics. I use both experimental insight and modern computational, machine learning, and AI approaches to investigate how molecular systems function and evolve.
 
-Currently, I am a SCINet postdoctoral researcher with the USDA GrainGenes group In this role, I leverage cutting-edge machine learning (ML) and deep learning (DL) methods—including protein structure prediction, protein language models, and molecular docking—to improve protein function annotation and generate resources for the broader research community. My research focuses on predicting key protein attributes such as phosphorylation sites, protein–protein interactions, and protein–ligand interactions. These efforts aim to enhance our understanding of protein function and its implications for agricultural and biological research.
+During my doctoral training at UC San Diego, I studied plant immune signaling and metabolism, including the characterization of a maize anti-herbivory receptor, peptide hormone-receptor interactions, and specialized metabolic pathways. I also investigated how maize specialized metabolites influence interactions belowground, including their role in shaping the root microbiome. This work developed my expertise in receptor biology, biochemical pathways, and the genetic diversity underlying plant defenses.
 
-`For the plant researchers reading this –` please also check out the genomics database, [www.plantapp.org](www.plantapp.org), that I have been developing and maintaining. PlantApp is a canonical gene-centric database designed to facilitate comparative genomics in plants through an intuitive and user-friendly interface. Currently, PlantApp features comprehensive protein descriptions, gene families, orthogroups, domain annotations, and genomic coordinates. More recently, I have integrated a large collection of re-analyzed transcriptomic data for over 20,000 RNA-seq samples from about 15 plant species. Interactive visualizations can be used to explore gene expression patterns, differentially expressed genes and gene coexpression. PlantApp also includes a number of apps that can help you build a quick phylogeny tree, run GO enrichment analyses, and visualize domain architecture. My goal with PlantApp is to provide researchers with a centralized, accessible resource for exploring plant genomes and transcriptomes, empowering discoveries in plant biology and beyond.
+My current post-doctoral research at USDA centers on computational biology methods for understanding protein function at scale. I work with protein language models, predicted protein structures, and molecular interaction modeling to improve functional annotation and biological inference. My interests include predicting short functional motifs, post-translation modifications, protein–protein interactions, and protein–ligand interactions, as well as building tools that make these predictions accessible and useful for plant and agricultural research communities.
 
-For a deeper dive into my work, including my CV, publication list, and selected citations, please visit the Research tab on the left.
-Thank you for stopping by!
+## PlantApp
 
-[GitHub](https://github.com/eporetsky/){: .btn .btn-purple }
-[Docker](https://hub.docker.com/u/externelly){: .btn .btn-blue }
-[PlantApp](https://www.plantapp.org/){: .btn .btn-green }
+I am the developer of **PlantApp**, a comprehensive platform for plant genomics and transcriptomics data. PlantApp integrates custom gene annotations, orthology relationships, protein domains, genomic context, and large-scale uniformly processed RNA-seq data into a single interactive interface. PlantApp is designed to lower the barrier between raw genomics data and biological insight, enabling rapid hypothesis generation directly in the browser. You can explore the public site at [plantapp.org](https://www.plantapp.org/).
 
-[Linkedin](https://www.linkedin.com/in/eporetsky/){: .btn }
-[Mastodon](https://genomic.social/@eporetsky){: .btn }
+For publications, CV, and lab history, use **Research** in the menu. More about PlantApp is on the **PlantApp** page in the menu above.
 
 ![](https://github.com/eporetsky/eporetsky.github.io/blob/master/assets/images/img_greenhouse.png?raw=true){: width="600" }
