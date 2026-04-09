@@ -16,10 +16,6 @@ has_toc: false
 {:toc}
 </details>
 
-## Molecular docking and protein-ligand interactions
-
-This project is work in progress. In general, I am interested in applying molecular docking methods, such as DiffDock and DynamicBind, to predicted plant specialized metabolism enzymes, primarily terpene syntheses (TPSs). Part of this work has been to develop an easy to use bioinformatics infrastructure for high-throughput analysis and visualization of protein-ligand interactions. You can find some relevant information in my [protein-ligand page](https://eporetsky.github.io/bioinformatics/protein_ligand), with more additions to come in the future.
-
 ## PhosBoost
 
 <a target="_blank" href="https://colab.research.google.com/github/eporetsky/workflows/blob/main/Colab/PhosBoost.ipynb">
@@ -27,6 +23,8 @@ This project is work in progress. In general, I am interested in applying molecu
 </a>
 
 PhosBoost is a machine learning approach that leverages protein language models and gradient boosting trees to predict protein phosphorylation from experimentally derived data. PhosBoost offers improved performance when recall is prioritized while consistently providing more confident probability scores.
+
+![](/assets/images/phosboost_fig1.png){: width="380" style="max-width:100%; height:auto;" }
 
 [Plant Direct](https://onlinelibrary.wiley.com/doi/full/10.1002/pld3.554){: .btn .btn-purple }
 [GitHub](https://github.com/eporetsky/PhosBoost){: .btn .btn-blue }
@@ -43,3 +41,29 @@ In the PanPPI framework, we generated predicted STRING-db interactomes for the 2
 [Docker](https://hub.docker.com/r/externelly/panppi){: .btn .btn-green }
 
 <u>Poretsky, E.*</u>, Cagirici, H. B.*, Andorf, C. M., & Sen, T. Z. (2024). Harnessing the predicted maize pan-interactome for putative gene function prediction and prioritization of candidate genes for important traits. G3: Genes, Genomes, Genetics, jkae059.
+
+## Structural Variability of Pfam Domains
+
+This work combines AlphaFold2-predicted structures with Pfam domain annotations to characterize structural variability within domain families. The [PfamFold](https://github.com/eporetsky/PfamFold) workflow extracts domain coordinates, computes structural features, and uses FoldSeek together with agglomerative clustering to group similar domain conformations—useful for interpreting domain diversity and for curation of Pfam families.
+
+![](/assets/images/pfam_fig1.png){: width="380" style="max-width:100%; height:auto;" }
+
+[Proteins](https://onlinelibrary.wiley.com/doi/full/10.1002/prot.70021){: .btn .btn-purple }
+[GitHub](https://github.com/eporetsky/PfamFold){: .btn .btn-blue }
+
+<u>Poretsky, E.</u>, Andorf, C. M., & Sen, T. Z. (2025). Structural variability of Pfam domains based on Alphafold2 predictions. Proteins, 93(12), 2182–2192.
+
+## LLMs in Biocuration
+
+Large language models (LLMs) can help extract structured information from the scientific literature, but their accuracy must be measured against expert curation. In the ChatMTA project we compared GPT-3.5 and GPT-4 to a professional curator on wheat and barley genetic mapping papers, using a retrieval-augmented QA setup to probe traits and QTLs. The study highlights where LLMs are already useful for biocuration workflows—and where human review remains essential.
+
+[Database](https://academic.oup.com/database/article/doi/10.1093/database/baaf011/8019548){: .btn .btn-purple }
+[GitHub](https://github.com/eporetsky/ChatMTA){: .btn .btn-blue }
+
+<u>Poretsky, E.*</u>, Blake, V. C., Andorf, C. M., & Sen, T. Z. (2025). Assessing the performance of generative artificial intelligence in retrieving information against manually curated genetic and genomic data. Database, 2025, baaf011.
+
+## Ligand Docking
+
+[LiganDock](https://github.com/eporetsky/LiganDock) is a Python toolkit for automated receptor and ligand preparation, flexible grid-box definition (marker ligand, selected residues, or PyKVFinder pockets), and batch docking with AutoDock Vina—wired to Meeko, RDKit, OpenBabel, and related tools. I am still interested in applying docking and related structure-based methods (including approaches such as DiffDock and DynamicBind) to predicted plant specialized metabolism enzymes, especially terpene synthases. Related notes and resources also appear on the [protein-ligand page](https://eporetsky.github.io/bioinformatics/protein_ligand).
+
+[GitHub](https://github.com/eporetsky/LiganDock){: .btn .btn-blue }
